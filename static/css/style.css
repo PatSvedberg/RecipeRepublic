@@ -1,0 +1,60 @@
+/* IMPORT FONTS HERE! */
+/* ALSO CHANGE ROOT FONTS */
+
+:root {
+    /* Fonts */
+    --title: 'EB Garamond', serif;
+    --main-font: 'Roboto', serif;
+
+    /* colors */
+    --background: #3f006a0f;
+    --blue: #0d6efd;
+    --black: #000;
+    --off-white: #f6d6d6;
+    --white: #fff;
+    --orange: #ffbf50;
+
+    /* Utils */
+    --small-box-shadow: 1px -px 7px 0 #00000061;
+    --boder: 1px solid #00000030;
+
+}
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--main-font);
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: var(--title);
+}
+
+main {
+    flex: 10 auto;
+    background-color: var(--white);
+}
+
+
+/* Header */
+.navbar {
+    background-color: var(--off-white);
+    box-shadow: var(--small-box-shadow);
+}
+
+a.nav-link {
+    color: var(--black);
+}
+
+img.logo {
+    width: 10.75rem;
+}
+
+/* Footer */
+
+footer {
+    flex-shrink: 0;
+}
