@@ -10,7 +10,7 @@
     --background: #3f006a0f;
     --blue: #0d6efd;
     --black: #000;
-    --off-white: #f6d6d6;
+    --off-white: #f6f6f6;
     --white: #fff;
     --orange: #ffbf50;
 
@@ -57,4 +57,15 @@ img.logo {
 
 footer {
     flex-shrink: 0;
+    background-color: var(--off-white);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-top: var(--boder);
+}
+
+.social-icon {
+    height: 2rem;
+    margin: 1rem;
 }
