@@ -13,6 +13,8 @@ from .models import Recipe
 from .forms import RecipeForm
 from django.urls import reverse_lazy
 
+from django.db.models import Q
+
 
 class Index(TemplateView):
     template_name = "recipe/index.html"
@@ -24,6 +26,20 @@ class RecipeList(ListView):
     template_name = "recipe/recipe_list.html"
     model = Recipe
     context_object_name = "recipes"
+
+    def get_queryset(self, **kwargs):
+        query = self.request.GET.get('q')
+        if query:
+            recipes = self.model.objects.filter(
+                Q(title__icontains=query) |
+                Q(description__icontains=query) |
+                Q(instructions__icontains=query) |
+                Q(category__icontains=query)
+            )
+        else:
+            recipes = self.model.objects.all()
+        return recipes
+
 
 
 class RecipeDetail(DetailView):
