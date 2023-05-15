@@ -4,10 +4,20 @@ from .models import Recipe
 
 
 class RecipeForm(forms.ModelForm):
-    '''Form to create new recipe'''
+    """Form to create new recipe"""
+
     class Meta:
         model = Recipe
-        fields = ['title', 'description', 'instructions', 'ingredients', 'image', 'image_alt', 'category', 'publicity']
+        fields = [
+            "title",
+            "description",
+            "instructions",
+            "ingredients",
+            "image",
+            "image_alt",
+            "category",
+            "publicity",
+        ]
 
         ingredients = forms.CharField(widget=RichTextWidget())
         instructions = forms.CharField(widget=RichTextWidget())

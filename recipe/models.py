@@ -10,9 +10,10 @@ PUBLICITY = (("private", "Private"), ("public", "Public"))
 
 
 class Recipe(models.Model):
-    '''
+    """
     Recipe model
-    '''
+    """
+
     user = models.ForeignKey(
         User, related_name="recipe_owner", on_delete=models.CASCADE
     )
@@ -34,11 +35,11 @@ class Recipe(models.Model):
     post_date = models.DateTimeField(auto_now=True)
 
     class Meta:
-        ordering = ['-post_date']
+        ordering = ["-post_date"]
 
     def __str__(self):
         return str(self.title)
 
     def save(self, *args, **kwargs):
-        self.image_alt = 'image of ' + self.description
+        self.image_alt = "image of " + self.description
         super().save(*args, **kwargs)
