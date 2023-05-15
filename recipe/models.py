@@ -8,6 +8,7 @@ from django_resized import ResizedImageField
 CATEGORY = (("food", "Food"), ("drink", "Drink"), ("other", "Other"))
 PUBLICITY = (("private", "Private"), ("public", "Public"))
 
+
 class Recipe(models.Model):
     '''
     Recipe model
