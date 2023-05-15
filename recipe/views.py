@@ -16,8 +16,13 @@ from django.urls import reverse_lazy
 from django.db.models import Q
 
 
-class Index(TemplateView):
-    template_name = "recipe/index.html"
+class Index(ListView):
+    template_name = 'recipe/index.html'
+    model = Recipe
+    context_object_name = 'recipes'
+
+    def get_queryset(self):
+        return self.model.objects.all()[:3]
 
 
 class RecipeList(ListView):

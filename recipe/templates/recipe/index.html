@@ -1,1 +1,55 @@
 {% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+
+{% block content %}
+
+<div class="container flex-column pt-3">
+    <section class="text-center">
+        <h1 class="main-title mx-auto">Welcome to Recipe Republic!</h1>
+
+        <p class="pt-4">
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum."
+        </p>
+    </section>
+    <section class="text-center">
+        <h3 class="main-title mx-auto">Latest Food Recipes</h3>
+        <div class="recipe-cont">
+            {% for recipe in recipes %}
+            {% if recipe.category == 'food' %}
+            <a href="{% url 'recipe_view' recipe.id %}" class="img-container">
+                <img src="{{recipe.image.url}}" alt="{{recipe.image_alt}}" style="width: 100%">
+                <div class="centered">
+                    <h2>{{recipe.title}}</h2>
+                </div>
+            </a>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </section>
+    <section class="text-center">
+        <h3 class="main-title mx-auto">Latest Drink Recipes</h3>
+        <div class="recipe-cont">
+            {% for recipe in recipes %}
+            {% if recipe.category == 'drink' %}
+            <a href="{% url 'recipe_view' recipe.id %}" class="img-container">
+                <img src="{{recipe.image.url}}" alt="{{recipe.image_alt}}" style="width: 100%">
+                <div class="centered">
+                    <h2>{{recipe.title}}</h2>
+                </div>
+            </a>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </section>
+    
+</div>
+
+
+
+{% endblock %}
