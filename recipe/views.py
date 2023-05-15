@@ -1,9 +1,17 @@
-from django.views.generic import TemplateView, CreateView, ListView, DetailView
+from django.views.generic import (
+    TemplateView, CreateView,
+    ListView, DetailView, DeleteView,
+    UpdateView,
+)
 
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import (
+    UserPassesTestMixin, LoginRequiredMixin,
+    LoginRequiredMixin,
+)
 
 from .models import Recipe
 from .forms import RecipeForm
+from django.urls import reverse_lazy
 
 
 class Index(TemplateView):
@@ -32,8 +40,28 @@ class NewRecipe(LoginRequiredMixin, CreateView):
     template_name = "recipe/new_recipe.html"
     model = Recipe
     form_class = RecipeForm
-    success_url = "home"
+    success_url = reverse_lazy("recipe_list")
 
     def form_valid(self, form):
         form.instance.user = self.request.user
         return super(NewRecipe, self).form_valid(form)
+
+
+class DeleteRecipe(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    '''Delete Recipe'''
+    model = Recipe
+    success_url = reverse_lazy("recipe_list")
+
+    def test_func(self):
+        return self.request.user == self.get_object().user
+
+
+class EditRecipe(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    '''Edit Recipe'''
+    template_name = "recipe/recipe_edit.html"
+    model = Recipe
+    form_class = RecipeForm
+    success_url = reverse_lazy("recipe_list")
+
+    def test_func(self):
+        return self.request.user == self.get_object().user
