@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     # My Apps
     'cloudinary',
     'recipe',
+    'profiles',
 
     # Other
     'crispy_forms',
