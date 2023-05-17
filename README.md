@@ -1,108 +1,165 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Recipe Republic - Recipe Maker. Project 4 by Patric Svedberg
 
-Welcome PatSvedberg,
+## [Heroku Deployment](https://recipe-republic.herokuapp.com/)
+<br>
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+# Introduction
+Recipe Republic is a site for those who loves to make recipes or just interested in finding something new to cook.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+# User Stories
+## Account:
+* As a admin I can make sure only users can create recipes so that being able to manage content easier
+* As a **User ** I can create a user profile so that I can create and save recipes
+## CRUD:
+* As a user I can only edit or delete recipes if I'm the owner so that other users will not edit or delete them
+* As a user I can view created recipes so that I can use them when cooking
+* As a site admin/user I can create, read, update and delete posted recipes so that I can manage the content
+## User Profile:
+* As a user I can view my profile page so that to see my private recipes and edit user info
+* As a user I can copy the ingredients from a recipe to a shopping list so that I easily can see what I need to buy when making the recipe
+* As a user I can create my own recipes so that I can view and share them with others
+## UI/UX:
+* As a user I can have a placeholder image based on what recipe category i make so that the recipe will have an image even if I don't have one of my own
+* As a user I can to see the recipes on the front page so that I'm presented with recipes at the start
+* As a user I can view the recipe as a list so that I can see recipes submited
+* As a user I can view latest uploaded recipes sorted by category (drink/food) so that I can see what is uploaded more easily
+* As a user I can search recipes so that I can find what I'm looking for easier
+* As a user I can view the recipes in a modal so that I can view recipes without opening a new page
+* As a user I can choose to open recipes in a new page when viewing them in a modal so that view the recipes in a full screen view and have two options how to view them
 
-## Gitpod Reminders
+# Database Design
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+| Recipe       |           |  |
+| ------------- |:-------------:| -----:|
+| type        | name           |
+| ------------- |-------------|
+| ForeignKey User     | user |
+| CharField     | title |
+| CharField      | description      |
+| RichTextField | instructions      |
+| RichTextField | ingredients      |
+| ResizedImageField | image      |
+| CharField | image_alt      |
+| CharField | publicity      |
+| DateTimeField | post_date      |
 
-`python3 -m http.server`
+<br>
 
-A blue button should appear to click: _Make Public_,
+| Profile       |           |  |
+| ------------- |:-------------:| -----:|
+| type        | name           |
+| ------------- |-------------|
+| ForeignKey User     | user |
+| CharField      | image      |
+| RichTextField | bio      |
 
-Another blue button should appear to click: _Open Browser_.
+<br>
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+# Database Relationships
 
-A blue button should appear to click: _Make Public_,
 
-Another blue button should appear to click: _Open Browser_.
+# Design
+# Wireframe
+## Front page:
+![Flowchart Image](/assets/images/wireframe_home.png)
+## Create Recipe Page:
+![Flowchart Image](/assets/images/wireframe_create.png)
+## Browse Recipe Page:
+![Flowchart Image](/assets/images/wireframe_browse.png)
+## Profile Page:
+![Flowchart Image](/assets/images/wireframe_profile.png)
+<br>
+## Flowchart
+## Features
+## Colors
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+# Testing
+## Known bugs
 
-To log into the Heroku toolbelt CLI:
+# Validators:
+## Python Linter
+## HTML Validator
+## CSS Validator
+## Lighthouse
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+# Technologies Used
+## Languages Used
+* [HTML]()
+* [CSS]()
+* [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
 
-------
+## Softwares used
+* [Github](https://github.com/PatSvedberg/cal-calc)
+* [Heroku](https://calcalc.herokuapp.com/)
+* [CI Python Linter](https://pep8ci.herokuapp.com/#)
+* [Lucidchart](https://www.lucidchart.com/pages)
+* [Figma]()
+* [Gitpod](https://gitpod.io/)
 
-## Release History
+## Frameworks
+* [Django]()
+* [Bootstrap]()
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+# Content
+## Helpful souces
+* [W3schools](https://www.w3schools.com/python/)
+* [Stack Overflow](https://stackoverflow.com/)
+* [Reddit r/Python](https://www.reddit.com/r/Python/)
+* [Code Institute](https://learn.codeinstitute.net/dashboard)
+* [Youtube](https://www.youtube.com/)
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+## Media
+* Hero image from [pexels.com](https://www.pexels.com/)
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+    # Deployment:
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+    ## Deployment
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+    The project was deployed to GitHub Pages using the following steps...
+    1. Log in to GitHub and locate the GitHub Repository.
+    2. Find the "Settings" button on the menu at the top of the repository
+    3. Scroll down the Settings page until you reach the "Pages" section.
+    4. In the "Source" section, click the dropdown labeled "None" and choose "Main Branch".
+    5. The page will refresh automatically.
+    6. Wait for the deployment process to complete.
+    <br>
+    <br>
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+    ## Forking
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+    To create a copy of an existing GitHub repository without affecting the original, we can fork the repository using these steps:
+    1. Log in to your [GitHub](https://github.com/) account and navigate to the repository you want to fork.
+    2. Click the "Fork" button at the top right of the repository page.
+    3. You should now have a copy of the original repository in your GitHub account that you can view and make changes to without affecting the original.
+    <br>
+    <br>
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+    ## Clone
+    Here are the steps to clone a GitHub repository:
+    1. Log in to your [GitHub](https://github.com/) account and locate the repository you want to clone.
+    2. Click the "Clone" button.
+    3. Copy the HTTPS link shown under "Clone with HTTPS".
+    4. Open Git Bash or another command-line interface.
+    5. Navigate to the directory where you want to store the cloned repository.
+    6. Type git clone and paste the URL you copied in Step 3. The command should look like this: git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.
+    7. Press Enter to run the command.
+    8. Wait for the cloning process to complete. A message like the following should appear in the console:
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+    ```
+        $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+        > Cloning into `CI-Clone`...
+        > remote: Counting objects: 10, done.
+        > remote: Compressing objects: 100% (8/8), done.
+        > remove: Total 10 (delta 1), reused 10 (delta 1)
+        > Unpacking objects: 100% (10/10), done.
+    ```
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
+    ## Push
+    1. Navigate to your local Git repository on your computer using your terminal or command prompt.
+    2. Make sure you are on the correct branch by running the command: `git branch`. If you're not on the correct branch, you can switch to it using: `git checkout <"branch-name">`.
+    3. Next, add the changes you have made to the file to the Git staging area using the command: `git add <"filename">`, or `git add .` to commit all files. This will prepare the changes for committing.
+    4. Commit the changes to the repository using the command: `git commit -m "Commit message"`.
+    5. Push the changes to the remote repository using the command: `git push`. This will update the file on the remote repository, making your changes available to others.
+    <br>
+    <br>

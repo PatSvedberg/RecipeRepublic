@@ -2,7 +2,7 @@
 
 <header>
     {% with request.resolver_match.url_name as url_name %}
-    <nav class="navbar navbar-expand-lg bg-light">
+    <nav id="navbar-top" class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
             <!-- Logo -->
             <a class="navbar-brand" href="#">Logo</a>
@@ -12,19 +12,7 @@
             </button>
             <!--Nav bar items-->
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto mb-2">
-                    <li class="nav-item">
-                        <a class="nav-link {% if url_name == 'home' %}active{% endif %}" aria-current="page"
-                            href="{% url 'home' %}">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {% if url_name == 'new_recipe' %}active{% endif %}"
-                            href="{% url 'new_recipe' %}">Create Recipes</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {% if url_name == 'recipe_list' %}active{% endif %}"
-                            href="{% url 'recipe_list' %}">Browse Recipes</a>
-                    </li>
+                <ul class="navbar-nav ms-auto mb-2">
                     {% if request.user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link {% if url_name == 'profile' %}active{% endif %}"
@@ -45,15 +33,39 @@
                     </li>
                     {% endif %}
                 </ul>
-                <div>
-
-                </div>
-                <!--Search bar Form-->
-                <form class="d-flex" role="search" method="GET" action="{% url 'recipe_list' %}">
-                    <input class="form-control me-2" name="q" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-primary" type="submit">Search</button>
-                </form>
             </div>
+        </div>
+    </nav>
+
+    <!--Lower Nav Bar-->
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+            <!--Nav bar items-->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto" style="display: flex; justify-content: center;">
+                    <li class="nav-item">
+                        <a class="nav-link {% if url_name == 'home' %}active{% endif %}" aria-current="page"
+                            href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if url_name == 'new_recipe' %}active{% endif %}"
+                            href="{% url 'new_recipe' %}">Create Recipes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if url_name == 'recipe_list' %}active{% endif %}"
+                            href="{% url 'recipe_list' %}">Browse Recipes</a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+
+            </div>
+            <!--Search bar Form-->
+            <form class="d-flex" role="search" method="GET" action="{% url 'recipe_list' %}">
+                <input class="form-control me-2" name="q" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-primary" type="submit">Search</button>
+            </form>
+        </div>
         </div>
     </nav>
     {% endwith %}
