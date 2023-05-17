@@ -97,9 +97,12 @@ Recipe Republic is a site for those who loves to make recipes or just interested
 * [Figma]()
 * [Gitpod](https://gitpod.io/)
 
-## Frameworks
+## Frameworks and packages
 * [Django]()
-* [Bootstrap]()
+* [Bootstrap 5]()
+* [Cloudinary]()
+* [Crispy Forms]()
+* [Django-richtextfield]()
 
 # Content
 ## Helpful souces

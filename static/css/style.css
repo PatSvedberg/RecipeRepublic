@@ -83,6 +83,14 @@ img.logo {
     font-weight: 500;
 }
 
+.profile-pic {
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+    border-radius: 50%;
+    border: black 1px solid;
+}
+
 /* Form */
 
 .form {
