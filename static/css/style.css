@@ -78,23 +78,40 @@ footer {
     background: rgb(255, 232, 111);
     background: linear-gradient(280deg, rgba(255, 232, 111, 0.41780462184873945) 0%, rgba(0, 0, 0, 1) 50%, rgba(255, 232, 111, 0.3309698879551821) 100%);
     box-shadow: var(--navbar-box-shadow);
-    position: relative; /* Add this line */
-    z-index: 1; /* Add this line */
+    position: relative;
+    z-index: 1;
 }
 
 .navbar {
     background: rgb(246, 246, 246);
     background: linear-gradient(280deg, rgba(246, 246, 246, 0.19931722689075626) 0%, rgba(246, 246, 246, 0.2049194677871149) 100%);
-    position: relative; /* Add this line */
-    z-index: 2; /* Add this line */
+    position: relative;
+    z-index: 2;
 }
 
 a.nav-link {
     color: var(--black);
 }
 
-img.logo {
-    width: 18.75rem;
+.navbar-brand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.logo {
+    width: 250px;
+    height: auto; /* Adjust height as needed */
+    max-width: 100%; /* Ensure the image doesn't exceed its container */
 }
 
 .active {
