@@ -38,7 +38,9 @@ body {
     background-image: url(/static/images/bg-image.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-}
+    position: relative; /* Add this line */
+    z-index: 0; /* Add this line */
+} 
 
 h1,
 h2,
@@ -73,12 +75,18 @@ footer {
 
 /* Header */
 #navbar-top {
+    background: rgb(255, 232, 111);
+    background: linear-gradient(280deg, rgba(255, 232, 111, 0.41780462184873945) 0%, rgba(0, 0, 0, 1) 50%, rgba(255, 232, 111, 0.3309698879551821) 100%);
     box-shadow: var(--navbar-box-shadow);
-    z-index: 1;
+    position: relative; /* Add this line */
+    z-index: 1; /* Add this line */
 }
 
 .navbar {
-    background-color: var(--off-white);
+    background: rgb(246, 246, 246);
+    background: linear-gradient(280deg, rgba(246, 246, 246, 0.19931722689075626) 0%, rgba(246, 246, 246, 0.2049194677871149) 100%);
+    position: relative; /* Add this line */
+    z-index: 2; /* Add this line */
 }
 
 a.nav-link {
