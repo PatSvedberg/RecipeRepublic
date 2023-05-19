@@ -34,7 +34,7 @@ SECRET_KEY = 'django-insecure-yy*!m1=)p$itj+t(d_%_!w)$86*p*x30!&qan!3r!yvxu+_g+k
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['recipe-republic.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['recipe-republic.herokuapp.com', 'localhost','8000-patsvedberg-reciperepub-1t3vnxbhwyq.ws-eu97.gitpod.io']
 
 
 # Application definition
