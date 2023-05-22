@@ -33,17 +33,21 @@ class RecipeList(ListView):
     context_object_name = "recipes"
 
     def get_queryset(self, **kwargs):
+        queryset = super().get_queryset()
+
+        category = self.request.GET.get('category')
+        if category:
+            queryset = queryset.filter(category=category)
+
         query = self.request.GET.get('q')
         if query:
-            recipes = self.model.objects.filter(
+            queryset = queryset.filter(
                 Q(title__icontains=query) |
                 Q(description__icontains=query) |
-                Q(instructions__icontains=query) |
-                Q(category__icontains=query)
+                Q(instructions__icontains=query)
             )
-        else:
-            recipes = self.model.objects.all()
-        return recipes
+
+        return queryset
 
 
 
