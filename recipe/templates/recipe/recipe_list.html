@@ -3,9 +3,11 @@
 {% block title %}Recipes{% endblock %}
 
 {% block content %}
+<section class="container browse-cont">
 <h1 class="text-center p-2 d-block">
     Browse Recipes:
 </h1>
+<p>Filter list by:</p>
 <div class="container d-flex flex-row flex-wrap justify-content-center">
     <div class="btn-group" role="group" aria-label="Recipe categories">
         <a href="{% url 'recipe_list' %}" class="btn {% if category == '' %}active{% endif %}">All</a>
@@ -26,4 +28,5 @@
     </a>
     {% endfor %}
 </div>
+</section>
 {% endblock %}

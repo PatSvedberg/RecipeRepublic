@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Roboto:wght@400;500&display=swap');
 
 :root {
-    /** Fonts */
+    /* Fonts */
     --title: 'EB Garamond', serif;
     --main-font: 'Roboto', serif;
 
-    /* Colours */
+    /* Colors */
     --background: #3f006a0f;
     --blue: #0d6efd;
     --black: #000;
@@ -117,9 +117,10 @@ a.nav-link {
 }
 
 .active {
-    border-bottom: 2px solid var(--blue);
+    border-bottom: 2px solid var(--black);
     font-weight: 500;
 }
+
 
 .profile-pic {
     height: 40px;
@@ -128,6 +129,8 @@ a.nav-link {
     border-radius: 50%;
     border: black 1px solid;
 }
+
+
 
 /* Form */
 
@@ -228,6 +231,23 @@ a.img-container:hover {
     transform: translate(-50%, -50%);
 }
 
+.browse-cont {
+    margin-top: 15px
+    box-shadow: var(--smal-box-shadow);
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.6);
+    text-align: center;
+    color: var(--yellowish)
+}
+
+.browse-cont a {
+    color: var(--off-white)
+}
+
+.btn-group {
+    border-bottom: 2px solid var(--yellowish);
+}
+
 /* Profiles */
 
 .profile-img {
@@ -255,41 +275,13 @@ a.img-container:hover {
     width: 100%;
 }
 
-/* Meal Planner */
-
-.accordion-body {
-    display: flex;
-    flex-direction: column;
-}
-
-.accordion-button {
-    font-size: 1.5rem;
-    font-weight: 500;
-    margin: 0;
-}
-
-.meals {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-h3>a {
-    text-align: center;
-    text-decoration: none;
-    font-weight: 700;
-}
-
-.thumb img {
-    width: 100%;
-}
 
 /*Cards*/
 
 .container {
     margin-right: auto;
     margin-left: auto;
+    margin-top: 15px;
 
 }
 
