@@ -15,6 +15,8 @@
                 class="btn {% if category == 'food' %}active{% endif %}">Food</a>
             <a href="{% url 'recipe_list' %}?category=drink"
                 class="btn {% if category == 'drink' %}active{% endif %}">Drinks</a>
+            <a href="{% url 'recipe_list' %}?vegan=yes"
+                class="btn {% if vegan == 'yes' %}active{% endif %}">Vegan</a>
         </div>
     </div>
     <div class="container">

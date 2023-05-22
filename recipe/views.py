@@ -32,12 +32,16 @@ class RecipeList(ListView):
     model = Recipe
     context_object_name = "recipes"
 
-    def get_queryset(self, **kwargs):
+    def get_queryset(self):
         queryset = super().get_queryset()
 
         category = self.request.GET.get('category')
         if category:
             queryset = queryset.filter(category=category)
+
+        vegan = self.request.GET.get('vegan')
+        if vegan == 'yes':
+            queryset = queryset.filter(vegan=vegan)
 
         query = self.request.GET.get('q')
         if query:
