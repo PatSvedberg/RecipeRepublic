@@ -14,7 +14,6 @@ class RecipeForm(forms.ModelForm):
             "instructions",
             "ingredients",
             "image",
-            "image_alt",
             "category",
             "publicity",
         ]
@@ -32,7 +31,6 @@ class RecipeForm(forms.ModelForm):
             "ingredients": "Ingredients",
             "instructions": "Instructions",
             "image": "Image",
-            "image_alt": "Describe Image",
             "category": "Category Type",
             "publicity": "Publicity",
         }

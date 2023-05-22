@@ -29,7 +29,6 @@ class Recipe(models.Model):
         blank=False,
         null=False,
     )
-    image_alt = models.CharField(max_length=200, null=False, blank=False)
     category = models.CharField(max_length=50, choices=CATEGORY, default="food")
     publicity = models.CharField(max_length=50, choices=PUBLICITY, default="private")
     post_date = models.DateTimeField(auto_now=True)
@@ -39,7 +38,3 @@ class Recipe(models.Model):
 
     def __str__(self):
         return str(self.title)
-
-    def save(self, *args, **kwargs):
-        self.image_alt = "image of " + self.description
-        super().save(*args, **kwargs)

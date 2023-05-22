@@ -34,11 +34,11 @@
                     <p>{{ recipe.description }}</p>
                 </div>
                 <div>
-                    <img src="{{ recipe.image.url }}" style="width: 100%" class="card__img">
+                    <img src="{{ recipe.image.url }}" alt="Image of {{ recipe.title }}" style="width: 100%" class="card__img">
                 </div>
                 <a href="{% url 'recipe_view' recipe.id %}" class="card_link">
                     <div class="card__img--hover">
-                        <img src="{{ recipe.image.url }}" style="width: 100%">
+                        <img src="{{ recipe.image.url }}" alt="Image of {{ recipe.title }}" style="width: 100%">
                     </div>
                 </a>
                 <div class="card__info">
@@ -74,11 +74,11 @@
                     <p>{{ recipe.description }}</p>
                 </div>
                 <div>
-                    <img src="{{ recipe.image.url }}" style="width: 100%" class="card__img">
+                    <img src="{{ recipe.image.url }}" alt="Image of {{ recipe.title }}" style="width: 100%" class="card__img">
                 </div>
                 <a href="{% url 'recipe_view' recipe.id %}" class="card_link">
                     <div class="card__img--hover">
-                        <img src="{{ recipe.image.url }}" style="width: 100%">
+                        <img src="{{ recipe.image.url }}" alt="Image of {{ recipe.title }}" style="width: 100%">
                     </div>
                 </a>
                 <div class="card__info">
