@@ -283,9 +283,16 @@ h3>a {
 
 /*Cards*/
 
-.card-container {
+.container {
     margin-right: auto;
     margin-left: auto;
+    
+}
+
+.card-title-container {
+background-color: rgba(0, 0, 0, 0.6);
+text-align: center;
+color: var(--off-white)
 }
 
 .cards {
@@ -298,7 +305,6 @@ h3>a {
     justify-content: center;
     -webkit-justify-content: center;
     max-width: 820px;
-    background-color: rgba(0, 0, 0, 0.6);
     padding: 10px 0 20px 10px;
 }
 
