@@ -4,7 +4,25 @@ from .models import Recipe
 
 
 class RecipeForm(forms.ModelForm):
-    """Form to create new recipe"""
+    """Form to create a new recipe"""
+
+    category = forms.ChoiceField(
+        choices=Recipe.CATEGORY_CHOICES,
+        widget=forms.RadioSelect,
+        label="Category Type"
+    )
+    
+    vegan = forms.ChoiceField(
+        choices=Recipe.VEGAN_CHOICES,
+        widget=forms.RadioSelect,
+        label="Vegan"
+    )
+    
+    publicity = forms.ChoiceField(
+        choices=Recipe.PUBLICITY_CHOICES,
+        widget=forms.RadioSelect,
+        label="Publicity"
+    )
 
     class Meta:
         model = Recipe
@@ -15,6 +33,7 @@ class RecipeForm(forms.ModelForm):
             "ingredients",
             "image",
             "category",
+            "vegan",
             "publicity",
         ]
 
@@ -31,6 +50,4 @@ class RecipeForm(forms.ModelForm):
             "ingredients": "Ingredients",
             "instructions": "Instructions",
             "image": "Image",
-            "category": "Category Type",
-            "publicity": "Publicity",
         }

@@ -50,11 +50,9 @@ class RecipeList(ListView):
         return queryset
 
 
-
 class RecipeDetail(DetailView):
     """Detailed view of recipe"""
-
-    template_name = "recipe/recipe_veiw.html"
+    template_name = "recipe/recipe_view.html"
     model = Recipe
     context_object_name = "recipe"
 

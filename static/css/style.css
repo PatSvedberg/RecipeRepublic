@@ -416,6 +416,10 @@ a.img-container:hover {
     opacity: 1;
 }
 
+.card-desc {
+    color:var(--black)
+}
+
 
 @media screen and (min-width:40em) {
     .form {

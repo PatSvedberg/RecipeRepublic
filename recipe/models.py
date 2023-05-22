@@ -4,15 +4,15 @@ from django.contrib.auth.models import User
 from djrichtextfield.models import RichTextField
 from django_resized import ResizedImageField
 
-# Choises
-CATEGORY = (("food", "Food"), ("drink", "Drink"), ("other", "Other"))
-PUBLICITY = (("private", "Private"), ("public", "Public"))
-
 
 class Recipe(models.Model):
     """
     Recipe model
     """
+
+    CATEGORY_CHOICES = (("food", "Food"), ("drink", "Drink"))
+    PUBLICITY_CHOICES = (("private", "Private"), ("public", "Public"))
+    VEGAN_CHOICES = (("no", "No"), ("yes", "Yes"))
 
     user = models.ForeignKey(
         User, related_name="recipe_owner", on_delete=models.CASCADE
@@ -29,8 +29,9 @@ class Recipe(models.Model):
         blank=False,
         null=False,
     )
-    category = models.CharField(max_length=50, choices=CATEGORY, default="food")
-    publicity = models.CharField(max_length=50, choices=PUBLICITY, default="private")
+    category = models.CharField(max_length=50, choices=CATEGORY_CHOICES, default="food")
+    vegan = models.CharField(max_length=50, choices=VEGAN_CHOICES, default="no")
+    publicity = models.CharField(max_length=50, choices=PUBLICITY_CHOICES, default="private")
     post_date = models.DateTimeField(auto_now=True)
 
     class Meta:
