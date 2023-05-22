@@ -14,6 +14,7 @@
             <hr>
             <p><strong>{{ recipe.description }}</strong></p>
             <p><strong>Category: </strong>{{ recipe.category|title }}</p>
+            <p><strong>Vegan: </strong>{{ recipe.vegan|title }}</p>
 
             {% if request.user == recipe.user %}
             <div class="text-center">

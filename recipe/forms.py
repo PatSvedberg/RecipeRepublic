@@ -9,7 +9,7 @@ class RecipeForm(forms.ModelForm):
     category = forms.ChoiceField(
         choices=Recipe.CATEGORY_CHOICES,
         widget=forms.RadioSelect,
-        label="Category Type"
+        label="Category"
     )
     
     vegan = forms.ChoiceField(
