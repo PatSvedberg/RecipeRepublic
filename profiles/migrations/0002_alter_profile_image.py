@@ -5,15 +5,23 @@ import django_resized.forms
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('profiles', '0001_initial'),
+        ("profiles", "0001_initial"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='profile',
-            name='image',
-            field=django_resized.forms.ResizedImageField(blank=True, crop=None, force_format='WEBP', keep_meta=True, quality=75, scale=None, size=[300, 300], upload_to='profiles/'),
+            model_name="profile",
+            name="image",
+            field=django_resized.forms.ResizedImageField(
+                blank=True,
+                crop=None,
+                force_format="WEBP",
+                keep_meta=True,
+                quality=75,
+                scale=None,
+                size=[300, 300],
+                upload_to="profiles/",
+            ),
         ),
     ]
