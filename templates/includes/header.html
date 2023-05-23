@@ -17,7 +17,7 @@
                     
                     <li class="nav-item">
                         <a class="nav-link {% if url_name == 'profile' %}active{% endif %}"
-                            href="{% url 'profile' request.user.id %}">Profile</a>
+                            href="{% url 'profile' request.user.id %}">{{ request.user.username }}</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {% if url_name == 'accounts_logout' %}active{% endif %}"
