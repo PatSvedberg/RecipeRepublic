@@ -31,7 +31,9 @@ class Recipe(models.Model):
     )
     category = models.CharField(max_length=50, choices=CATEGORY_CHOICES, default="food")
     vegan = models.CharField(max_length=50, choices=VEGAN_CHOICES, default="no")
-    publicity = models.CharField(max_length=50, choices=PUBLICITY_CHOICES, default="private")
+    publicity = models.CharField(
+        max_length=50, choices=PUBLICITY_CHOICES, default="private"
+    )
     post_date = models.DateTimeField(auto_now=True)
 
     class Meta:

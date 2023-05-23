@@ -4,20 +4,25 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('recipe', '0005_remove_recipe_image_alt'),
+        ("recipe", "0005_remove_recipe_image_alt"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='recipe',
-            name='vegan',
-            field=models.CharField(choices=[('no', 'No'), ('yes', 'Yes')], default='no', max_length=50),
+            model_name="recipe",
+            name="vegan",
+            field=models.CharField(
+                choices=[("no", "No"), ("yes", "Yes")], default="no", max_length=50
+            ),
         ),
         migrations.AlterField(
-            model_name='recipe',
-            name='category',
-            field=models.CharField(choices=[('food', 'Food'), ('drink', 'Drink')], default='food', max_length=50),
+            model_name="recipe",
+            name="category",
+            field=models.CharField(
+                choices=[("food", "Food"), ("drink", "Drink")],
+                default="food",
+                max_length=50,
+            ),
         ),
     ]

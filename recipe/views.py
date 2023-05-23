@@ -1,11 +1,15 @@
 from django.views.generic import (
-    TemplateView, CreateView,
-    ListView, DetailView, DeleteView,
+    TemplateView,
+    CreateView,
+    ListView,
+    DetailView,
+    DeleteView,
     UpdateView,
 )
 
 from django.contrib.auth.mixins import (
-    UserPassesTestMixin, LoginRequiredMixin,
+    UserPassesTestMixin,
+    LoginRequiredMixin,
     LoginRequiredMixin,
 )
 
@@ -17,9 +21,9 @@ from django.db.models import Q
 
 
 class Index(ListView):
-    template_name = 'recipe/index.html'
+    template_name = "recipe/index.html"
     model = Recipe
-    context_object_name = 'recipes'
+    context_object_name = "recipes"
 
     def get_queryset(self):
         return self.model.objects.all()[:10]
@@ -35,20 +39,20 @@ class RecipeList(ListView):
     def get_queryset(self):
         queryset = super().get_queryset()
 
-        category = self.request.GET.get('category')
+        category = self.request.GET.get("category")
         if category:
             queryset = queryset.filter(category=category)
 
-        vegan = self.request.GET.get('vegan')
-        if vegan == 'yes':
+        vegan = self.request.GET.get("vegan")
+        if vegan == "yes":
             queryset = queryset.filter(vegan=vegan)
 
-        query = self.request.GET.get('q')
+        query = self.request.GET.get("q")
         if query:
             queryset = queryset.filter(
-                Q(title__icontains=query) |
-                Q(description__icontains=query) |
-                Q(instructions__icontains=query)
+                Q(title__icontains=query)
+                | Q(description__icontains=query)
+                | Q(instructions__icontains=query)
             )
 
         return queryset
@@ -56,6 +60,7 @@ class RecipeList(ListView):
 
 class RecipeDetail(DetailView):
     """Detailed view of recipe"""
+
     template_name = "recipe/recipe_view.html"
     model = Recipe
     context_object_name = "recipe"
@@ -75,7 +80,8 @@ class NewRecipe(LoginRequiredMixin, CreateView):
 
 
 class DeleteRecipe(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
-    '''Delete Recipe'''
+    """Delete Recipe"""
+
     model = Recipe
     success_url = reverse_lazy("recipe_list")
 
@@ -84,7 +90,8 @@ class DeleteRecipe(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
 
 class EditRecipe(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
-    '''Edit Recipe'''
+    """Edit Recipe"""
+
     template_name = "recipe/recipe_edit.html"
     model = Recipe
     form_class = RecipeForm
