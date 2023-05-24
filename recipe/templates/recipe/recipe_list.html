@@ -15,9 +15,25 @@
                 class="btn {% if category == 'food' %}active{% endif %}">Food</a>
             <a href="{% url 'recipe_list' %}?category=drink"
                 class="btn {% if category == 'drink' %}active{% endif %}">Drinks</a>
-            <a href="{% url 'recipe_list' %}?vegan=yes"
-                class="btn {% if vegan == 'yes' %}active{% endif %}">Vegan</a>
+            <a href="{% url 'recipe_list' %}?vegan=yes" class="btn {% if vegan == 'yes' %}active{% endif %}">Vegan</a>
         </div>
+    </div>
+    <!--Search bar Form-->
+    <div class="search-container">
+        <form class="d-flex" role="search" method="GET" action="{% url 'recipe_list' %}">
+            <input class="form-control me-2" name="q" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-primary" type="submit">Search</button>
+        </form>
+        
+        <div class="flexbox">
+            <form class="search d-flex" role="search" method="GET" action="{% url 'recipe_list' %}">
+              <h6>Find specific recipe </h6>
+              <div>
+                <input name="q" type="search" placeholder="Search . . ." aria-label="Search" required>
+                <button class="btn btn-outline-primary" type="submit">Search</button>
+              </div>
+            </form>
+          </div>
     </div>
     <div class="browse-container">
         <div class="card-title-container">
@@ -32,7 +48,8 @@
                         <p class="card-desc">{{ recipe.description }}</p>
                     </div>
                     <div>
-                        <img src="{{ recipe.image.url }}" alt="Image of {{ recipe.title }}" style="width: 100%" class="card__img">
+                        <img src="{{ recipe.image.url }}" alt="Image of {{ recipe.title }}" style="width: 100%"
+                            class="card__img">
                     </div>
                     <a href="{% url 'recipe_view' recipe.id %}" class="card_link">
                         <div class="card__img--hover">
@@ -53,18 +70,20 @@
 
     <nav aria-label="Page navigation example">
         <ul class="pagination justify-content-center">
-          <li class="page-item {% if not page_obj.has_previous %}disabled{% endif %}">
-            <a class="page-link" href="{% if page_obj.has_previous %}?page=1{% endif %}" tabindex="-1" aria-disabled="{% if not page_obj.has_previous %}true{% endif %}">Previous</a>
-          </li>
-          {% for page_num in page_obj.paginator.page_range %}
-              <li class="page-item {% if page_obj.number == page_num %}active{% endif %}">
-                  <a class="page-link" href="?page={{ page_num }}">{{ page_num }}</a>
-              </li>
-          {% endfor %}
-          <li class="page-item {% if not page_obj.has_next %}disabled{% endif %}">
-            <a class="page-link" href="{% if page_obj.has_next %}?page={{ page_obj.next_page_number }}{% endif %}">Next</a>
-          </li>
+            <li class="page-item {% if not page_obj.has_previous %}disabled{% endif %}">
+                <a class="page-link" href="{% if page_obj.has_previous %}?page=1{% endif %}" tabindex="-1"
+                    aria-disabled="{% if not page_obj.has_previous %}true{% endif %}">Previous</a>
+            </li>
+            {% for page_num in page_obj.paginator.page_range %}
+            <li class="page-item {% if page_obj.number == page_num %}active{% endif %}">
+                <a class="page-link" href="?page={{ page_num }}">{{ page_num }}</a>
+            </li>
+            {% endfor %}
+            <li class="page-item {% if not page_obj.has_next %}disabled{% endif %}">
+                <a class="page-link"
+                    href="{% if page_obj.has_next %}?page={{ page_obj.next_page_number }}{% endif %}">Next</a>
+            </li>
         </ul>
-      </nav>
-      
+    </nav>
+
     {% endblock %}

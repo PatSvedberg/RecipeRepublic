@@ -74,14 +74,25 @@ Recipe Republic is a site for those who loves to make recipes or just interested
 ## Colors
 
 # Testing
+
+## Manual Testing:
+
+| Test       | Action           | Expected Result  | Expected Result  |
+| ------------- |:-------------:| -----:| -----:|
+| User       | Create User | Be able to create a user   | Works as expected |
+| Admin       | CRUD User | Admin is able to create, read,<br> update and delete user  | Works as expected |
+| User       | Create a recipe | Only a user <br> will be able to create a recipe| Works as expected
+| User   | View Recipe | Be able to view a recipe when <br> logged in and not logged in. | Works as expected
+| User      | CRUD Recipe      | Only the user who created the recipe<br> will have the ability to update or delete it | Works as expected
+| User | Search recipe      | Able to search recipes from the search bar  | Works as expected
+
+## Validators:
+### Python Linter
+### HTML Validator
+### CSS Validator
+### Lighthouse
+
 ## Known bugs
-
-# Validators:
-## Python Linter
-## HTML Validator
-## CSS Validator
-## Lighthouse
-
 
 # Technologies Used
 ## Languages Used
