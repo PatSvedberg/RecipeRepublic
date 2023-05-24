@@ -20,13 +20,19 @@ from django.core.paginator import Paginator
 from django.db.models import Q
 
 
+from django.db.models import F
+
 class Index(ListView):
     template_name = "recipe/index.html"
     model = Recipe
     context_object_name = "recipes"
 
     def get_queryset(self):
-        return self.model.objects.all()[:10]
+        queryset = super().get_queryset()
+        food_recipes = queryset.filter(category='food').order_by('-post_date')[:4]
+        drink_recipes = queryset.filter(category='drink').order_by('-post_date')[:4]
+        return food_recipes.union(drink_recipes).order_by('-post_date')
+
 
 
 class RecipeList(ListView):
