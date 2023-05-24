@@ -29,29 +29,41 @@ Recipe Republic is a site for those who loves to make recipes or just interested
 
 # Database Design
 
-| Recipe       |           |  |
+## User:
+| Type  |  Name    |  |
 | ------------- |:-------------:| -----:|
-| type        | name           |
-| ------------- |-------------|
-| ForeignKey User     | user |
-| CharField     | title |
-| CharField      | description      |
-| RichTextField | instructions      |
-| RichTextField | ingredients      |
-| ResizedImageField | image      |
-| CharField | image_alt      |
-| CharField | publicity      |
-| DateTimeField | post_date      |
+| int   | UserID |
+| CharField      | Username      |
+| CharField | Email      |
+| CharField | Password      |
+
+## Recipe
+
+| Type       |Name|  |
+| ------------- |:-------------:| -----:|
+| ForeignKey User        | Owner           |
+| int     | RecipeID |
+| CharField     | Title |
+| CharField      | Description      |
+| TextField | Instruction      |
+| TextField | Ingredients      |
+| ImageField | image      |
+| CharField | Category      |
+| CharField | Vegan      |
+| CharField | Publicity      |
+| DateTimeField | Post Date      |
 
 <br>
 
-| Profile       |           |  |
+## Profile
+
+| Type       |Name|  |
 | ------------- |:-------------:| -----:|
-| type        | name           |
-| ------------- |-------------|
-| ForeignKey User     | user |
-| CharField      | image      |
-| RichTextField | bio      |
+| ForeignKey User     | User |
+| CharField      | User Image      |
+| TextField | Bio     |
+| CharField | First Name     |
+| CharField | Last Name     |
 
 <br>
 
