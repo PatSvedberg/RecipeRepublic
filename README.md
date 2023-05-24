@@ -83,6 +83,9 @@ Here, the user will be able to read all the created recipes and view all the inf
 ## Flowchart
 ## Features
 ## Colors
+![Palette Image](/assets/images/readme_palette.png)
+Created with [coolors.co](https://coolors.co/)
+<br>
 
 # Testing
 
