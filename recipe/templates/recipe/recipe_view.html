@@ -3,6 +3,7 @@
 {% block title %}{{ recipe.title }}{% endblock %}
 
 {% block content %}
+<section class="recipe-section">
 <div class="container">
     <div class="recipe-info mt-3 p-1">
         <div class="recipe-img">
@@ -12,16 +13,10 @@
             <h1 class="text-center">{{ recipe.title }}</h1>
             <p class="text-center">Posted by {{ recipe.user }} on {{ recipe.post_date }}</p>
             <hr>
-            <p><strong>{{ recipe.description }}</strong></p>
+            <h5>{{ recipe.description }}</h5>
+            <hr>
             <p><strong>Category: </strong>{{ recipe.category|title }}</p>
             <p><strong>Vegan: </strong>{{ recipe.vegan|title }}</p>
-
-            {% if request.user == recipe.user %}
-            <div class="text-center">
-                <a href="{% url 'edit_recipe' recipe.pk %}" class="btn btn-primary w-25">Edit</a>
-                <a href="{% url 'delete_recipe' recipe.pk %}" class="btn btn-primary w-25">Delete</a>
-            </div>
-            {% endif %}
         </div>
     </div>
     <div class="recipe-container">
@@ -29,10 +24,18 @@
             <h2>Ingredients</h2>
             <p>{{ recipe.ingredients|safe }}</p>
         </div>
+        
         <div class="instructions p-3">
             <h2>Instructions</h2>
             <p>{{ recipe.instructions|safe }}</p>
         </div>
     </div>
+    {% if request.user == recipe.user %}
+    <div class="text-center">
+        <a href="{% url 'edit_recipe' recipe.pk %}" class="btn btn-primary w-25">Edit</a>
+        <a href="{% url 'delete_recipe' recipe.pk %}" class="btn btn-primary w-25">Delete</a>
+    </div>
+    {% endif %}
 </div>
+</section>
 {% endblock %}
