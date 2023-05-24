@@ -121,8 +121,16 @@ Created with [coolors.co](https://coolors.co/)
 ### HTML Validator
 ### CSS Validator
 ### Lighthouse
+### Known bugs
 
-## Known bugs
+# Agile Workflow
+An approximation of the agile workflow was implemented in the development of this project. The key ideas adopted were:
+
+* **Prioritize essential features:** I focused on the implementation of fundamental features that were the most important for the project's core functionality.
+
+* **Work in small Iterations:** The project was divided into manageable iterations, lasting one week. Each iteration was to deliver a functional portion of the project.
+
+* **Add Additional Features When Possible:** After completing the most important features, I focused on adding more functions and a better user experience.
 
 # Technologies Used
 ## Languages Used
