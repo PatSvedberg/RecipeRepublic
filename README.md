@@ -59,6 +59,17 @@ Recipe Republic is a site for those who loves to make recipes or just interested
 
 
 # Design
+## Pages
+### **Index**
+The front page will display a greeting text to the user, along with the four most recent food and four most recent drink recipes that have been uploaded.
+### **Create Recipe**
+The create recipe form is located on this page, accessible only to logged-in users. If you are not logged in and try to access this page, you will be redirected to the login page.
+### **Browse Recipe**
+
+Here, the user can browse all the recipes by utilizing the search bar or filtering the list to display all recipes, food recipes, drink recipes, or vegan recipes.
+### **View Recipe**
+Here, the user will be able to read all the created recipes and view all the information provided by the creators.
+<br>
 # Wireframe
 ## Front page:
 ![Flowchart Image](/assets/images/wireframe_home.png)
@@ -78,13 +89,15 @@ Recipe Republic is a site for those who loves to make recipes or just interested
 ## Manual Testing:
 
 | Test       | Action           | Expected Result  | Expected Result  |
-| ------------- |:-------------:| -----:| -----:|
+| ------------- |:-------------| :-----| :-----|
 | User       | Create User | Be able to create a user   | Works as expected |
 | Admin       | CRUD User | Admin is able to create, read,<br> update and delete user  | Works as expected |
-| User       | Create a recipe | Only a user <br> will be able to create a recipe| Works as expected
+| Admin       | CRUD Recipe | Admin is able to create, read,<br> update and delete recipe  | Works as expected |
+| User       | Create a recipe | Only a user will be able<br> to create a recipe| Works as expected
 | User   | View Recipe | Be able to view a recipe when <br> logged in and not logged in. | Works as expected
 | User      | CRUD Recipe      | Only the user who created the recipe<br> will have the ability to update or delete it | Works as expected
-| User | Search recipe      | Able to search recipes from the search bar  | Works as expected
+| User | Search recipe      | Search recipes from the search bar  | Works as expected
+| User | Browse Recipe category  | Browse recipe category<br> (All, Food, Drink, Vegan)  | Works as expected
 
 ## Validators:
 ### Python Linter
