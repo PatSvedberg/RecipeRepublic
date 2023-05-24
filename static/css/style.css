@@ -141,7 +141,7 @@ a.nav-link {
     border-radius: 5px;
     background-color: rgba(0, 0, 0, 0.6);
     text-align: center;
-    color: var(--yellowish)
+    color: var(--yellowish);
 }
 
 form label {
@@ -150,7 +150,6 @@ form label {
     justify-content: center;
     font-size: 18px;
 }
-
 
 /* Recipes */
 
@@ -250,12 +249,36 @@ a.img-container:hover {
     color: var(--yellowish)
 }
 
+.browse-container {
+    margin-right: 5%;
+    margin-left: 5%;
+    margin-top: 60px;
+    margin-bottom: 65px;
+    padding-bottom: 20px;
+
+}
+
 .browse-cont a {
     color: var(--off-white)
 }
 
 .btn-group {
     border-bottom: 2px solid var(--yellowish);
+}
+
+/* Pagination */
+
+.pagination {
+    --bs-pagination-active-border-color: var(--black)
+}
+
+.pagination .page-link {
+    color: var(--black);
+    background-color: var(--off-white);
+}
+
+.pagination .page-item.active .page-link {
+    background-color: var(--yellowish);
 }
 
 /*Recipe form */
@@ -284,28 +307,28 @@ a.img-container:hover {
 
 }
 
-  .card-title-container {
+.card-title-container {
     text-align: center;
-  }
+}
 
-  .card-title-container h3 {
+.card-title-container h3 {
     color: var(--yellowish);
-  }
+}
 
-  .cards {
+.cards {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-  }
+}
 
-  .card {
+.card {
     width: 300px;
     margin: 10px;
-  }
+}
 
-  .card_link {
+.card_link {
     text-decoration: none;
-  }
+}
 
 .card__like {
     width: 18px;
@@ -313,14 +336,15 @@ a.img-container:hover {
 
 .card__img {
     width: 100%;
-  }
-  
+}
 
-  .card__info-hover {
+
+.card__info-hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start; /* Adjusted alignment to flex-start */
+    justify-content: flex-start;
+    /* Adjusted alignment to flex-start */
     position: absolute;
     top: 0;
     left: 0;
@@ -329,7 +353,7 @@ a.img-container:hover {
     opacity: 0;
     background-color: rgba(255, 255, 255, 0.9);
     transition: opacity 0.2s ease-out;
-  }
+}
 
 .card__img--hover {
     transition: 0.2s all ease-out;
@@ -374,19 +398,19 @@ a.img-container:hover {
     font-weight: 500;
     color: #868686;
 }
-  
-  .card__title {
+
+.card__title {
     margin-top: 5px;
     text-align: center;
-  }
+}
 
-  .card__title {
+.card__title {
     margin-top: 5px;
     margin-bottom: 10px;
     font-family: 'Roboto Slab', serif;
 }
 
-  .card__by {
+.card__by {
     font-size: 12px;
     font-family: 'Raleway', sans-serif;
     font-weight: 500;
@@ -425,7 +449,7 @@ a.img-container:hover {
     margin-top: 15px;
     padding: 20px;
     text-align: center;
-  }
+}
 
 /* Profiles */
 
@@ -519,3 +543,4 @@ a.img-container:hover {
         text-decoration: none;
     }
 }
+

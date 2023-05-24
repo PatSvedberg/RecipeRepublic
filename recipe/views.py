@@ -16,7 +16,7 @@ from django.contrib.auth.mixins import (
 from .models import Recipe
 from .forms import RecipeForm
 from django.urls import reverse_lazy
-
+from django.core.paginator import Paginator
 from django.db.models import Q
 
 
@@ -35,6 +35,7 @@ class RecipeList(ListView):
     template_name = "recipe/recipe_list.html"
     model = Recipe
     context_object_name = "recipes"
+    paginate_by = 2
 
     def get_queryset(self):
         queryset = super().get_queryset()
@@ -56,6 +57,17 @@ class RecipeList(ListView):
             )
 
         return queryset
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        recipes = context["recipes"]
+        paginator = Paginator(recipes, self.paginate_by)
+
+        page_number = self.request.GET.get("page")
+        recipes = paginator.get_page(page_number)
+
+        context["recipes"] = recipes
+        return context
 
 
 class RecipeDetail(DetailView):

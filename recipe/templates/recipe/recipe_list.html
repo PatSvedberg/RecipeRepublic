@@ -19,9 +19,8 @@
                 class="btn {% if vegan == 'yes' %}active{% endif %}">Vegan</a>
         </div>
     </div>
-    <div class="upload-container">
+    <div class="browse-container">
         <div class="card-title-container">
-            <h3>Latest Food Recipes</h3>
             <section class="cards">
                 {% for recipe in recipes %}
                 <article class="card card--1">
@@ -51,4 +50,21 @@
             </section>
         </div>
     </div>
+
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+          <li class="page-item {% if not page_obj.has_previous %}disabled{% endif %}">
+            <a class="page-link" href="{% if page_obj.has_previous %}?page=1{% endif %}" tabindex="-1" aria-disabled="{% if not page_obj.has_previous %}true{% endif %}">Previous</a>
+          </li>
+          {% for page_num in page_obj.paginator.page_range %}
+              <li class="page-item {% if page_obj.number == page_num %}active{% endif %}">
+                  <a class="page-link" href="?page={{ page_num }}">{{ page_num }}</a>
+              </li>
+          {% endfor %}
+          <li class="page-item {% if not page_obj.has_next %}disabled{% endif %}">
+            <a class="page-link" href="{% if page_obj.has_next %}?page={{ page_obj.next_page_number }}{% endif %}">Next</a>
+          </li>
+        </ul>
+      </nav>
+      
     {% endblock %}
