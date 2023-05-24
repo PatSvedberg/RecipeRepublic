@@ -57,6 +57,8 @@ Recipe Republic is a site for those who loves to make recipes or just interested
 
 # Database Relationships
 
+![ERD Image](/assets/images/readme-erd.png)
+
 
 # Design
 ## Pages
