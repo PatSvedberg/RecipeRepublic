@@ -258,6 +258,19 @@ a.img-container:hover {
     border-bottom: 2px solid var(--yellowish);
 }
 
+/*Recipe form */
+
+.div_id_category div {
+    display: flex;
+    flex-direction: row;
+}
+
+.form-check {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
 /* Profiles */
 
 .profile-img {
@@ -317,7 +330,6 @@ a.img-container:hover {
 .card__like {
     width: 18px;
 }
-
 
 .card__img {
     visibility: hidden;

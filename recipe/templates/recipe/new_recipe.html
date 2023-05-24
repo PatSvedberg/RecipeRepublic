@@ -1,17 +1,71 @@
 {% extends "base.html" %}
 
-{% block title %}Add Recipe{% endblock %} 
+{% block title %}Add Recipe{% endblock %}
 
 {% block content %}
-<div class="container">
-    <form method="POST" enctype="multipart/form-data" class="p-2 form">
-        <h1 class="text-center">Create new recipe</h1>
-        {% csrf_token %}
-        {{ form.media }} 
-        {{ form|crispy }}
-        <div class="text-center">
-            <button type="submit" class="btn btn-primary mt-2">Create!</button>
-        </div>
-    </form>
-</div>
+<section class="create-recipe-section">
+    <div class="container">
+        <form method="POST" enctype="multipart/form-data" class="p-4 form">
+            <h1 class="text-center">Create new recipe</h1>
+            {% csrf_token %}
+            {{ form.media }}
+
+            <!-- Field: Title -->
+            <div class="form-group">
+                <label for="{{ form.title.id_for_label }}"></label>
+                {{ form.title|as_crispy_field }}
+            </div>
+
+            <!-- Field: Description -->
+            <div class="form-group">
+                <label for="{{ form.description.id_for_label }}"></label>
+                {{ form.description|as_crispy_field }}
+            </div>
+
+            <!-- Field: Ingredients -->
+            <div class="form-group">
+                <label for="{{ form.ingredients.id_for_label }}"></label>
+                {{ form.ingredients|as_crispy_field }}
+            </div>
+
+            <!-- Field: Instructions -->
+            <div class="form-group">
+                <label for="{{ form.instructions.id_for_label }}"></label>
+                {{ form.instructions|as_crispy_field }}
+            </div>
+
+            <!-- Field: Image -->
+            <div class="form-group">
+                <label for="{{ form.image.id_for_label }}"></label>
+                {{ form.image|as_crispy_field }}
+            </div>
+            <hr>
+
+            <!-- Field: Category -->
+            <div class="form-group">
+                <label for="{{ form.category.id_for_label }}"></label>
+                {{ form.category|as_crispy_field }}
+            </div>
+            <hr>
+
+            <!-- Field: Vegan -->
+            <div class="form-group">
+                <label for="{{ form.vegan.id_for_label }}"></label>
+                {{ form.vegan|as_crispy_field }}
+            </div>
+            <hr>
+
+            <!-- Field: Publicity -->
+            <div class="form-group">
+                <label for="{{ form.publicity.id_for_label }}"></label>
+                {{ form.publicity|as_crispy_field }}
+            </div>
+            <hr>
+
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary mt-2">Create!</button>
+            </div>
+        </form>
+    </div>
+</section>
 {% endblock %}
