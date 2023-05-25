@@ -5,16 +5,14 @@
     <nav id="navbar-top" class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
             <!-- Logo -->
-            <a class="navbar-brand" href="{% url 'new_recipe' %}">
-                <div class="logo-container">
-                    <img src="/static/images/rr-logo-white.png" alt="Recipe Republic Logo" class="logo">
-                </div>
+            <a class="navbar-brand" href="{% url 'home' %}">
+                <img src="{% static 'images/logo.svg' %}" alt="Recipe Republic Logo" class="logo">
             </a>
             <!--Nav bar items-->
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto mb-2">
                     {% if request.user.is_authenticated %}
-                    
+
                     <li class="nav-item">
                         <a class="nav-link {% if url_name == 'profile' %}active{% endif %}"
                             href="{% url 'profile' request.user.id %}">{{ request.user.username }}</a>

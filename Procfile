@@ -1,1 +1,1 @@
-web: gunicorn --preload reciperepublic.wsgi
+web: gunicorn reciperepublic.wsgi
