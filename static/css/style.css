@@ -37,7 +37,7 @@ body {
     display: flex;
     flex-direction: column;
     font-family: var(--main-font);
-    background-image: url(/static/images/bg-image.jpg);
+    background-image: url(/static/icons/bg-image.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
