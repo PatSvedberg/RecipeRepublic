@@ -5,34 +5,11 @@
     <nav id="navbar-top" class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
             <!-- Logo -->
-            <a class="navbar-brand" href="{% url 'home' %}" target="_self" rel="noopener" aria-label="Back to front page">
-                <img src="https://res.cloudinary.com/dujhjpyjv/image/upload/v1684944229/static/images/rr-logo-white.30c1948d0dfb.png" alt="Recipe Republic Logo" class="logo">
+            <a class="navbar-brand" href="{% url 'home' %}" target="_self" rel="noopener"
+                aria-label="Back to front page">
+                <img src="https://res.cloudinary.com/dujhjpyjv/image/upload/v1684944229/static/images/rr-logo-white.30c1948d0dfb.png"
+                    alt="Recipe Republic Logo" class="logo">
             </a>
-            <!--Nav bar items-->
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto mb-2">
-                    {% if request.user.is_authenticated %}
-
-                    <li class="nav-item">
-                        <a class="nav-link {% if url_name == 'profile' %}active{% endif %}"
-                            href="{% url 'profile' request.user.id %}">{{ request.user.username }}</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {% if url_name == 'accounts_logout' %}active{% endif %}"
-                            href="/accounts/logout/">Logout</a>
-                    </li>
-                    {% else %}
-                    <li class="nav-item">
-                        <a class="nav-link {% if url_name == 'accounts_signup' %}active{% endif %}"
-                            href="/accounts/signup/">Register</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {% if url_name == 'accounts_login' %}active{% endif %}"
-                            href="/accounts/login/">Login</a>
-                    </li>
-                    {% endif %}
-                </ul>
-            </div>
         </div>
     </nav>
 
@@ -40,7 +17,8 @@
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
             <!--Nav bar items-->
-            <div class="collapse navbar-collapse" id="navbarNav">
+
+            <div class="navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto" style="display: flex; justify-content: center;">
                     <li class="nav-item">
                         <a class="nav-link {% if url_name == 'home' %}active{% endif %}" aria-current="page"
@@ -55,11 +33,28 @@
                             href="{% url 'recipe_list' %}">Browse Recipes</a>
                     </li>
                 </ul>
+                <ul class="navbar-nav ml-auto">
+                    {% if request.user.is_authenticated %}
+                    <li class="nav-item user-nav">
+                        <a class="nav-link {% if url_name == 'profile' %}active{% endif %}"
+                            href="{% url 'profile' request.user.id %}">{{ request.user.username }}</a>
+                    </li>
+                    <li class="nav-item user-nav">
+                        <a class="nav-link {% if url_name == 'accounts_logout' %}active{% endif %}"
+                            href="/accounts/logout/">Logout</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item user-nav">
+                        <a class="nav-link {% if url_name == 'accounts_signup' %}active{% endif %}"
+                            href="/accounts/signup/">Register</a>
+                    </li>
+                    <li class="nav-item user-nav">
+                        <a class="nav-link {% if url_name == 'accounts_login' %}active{% endif %}"
+                            href="/accounts/login/">Login</a>
+                    </li>
+                    {% endif %}
+                </ul>
             </div>
-            <div>
-
-            </div>
-        </div>
         </div>
     </nav>
     {% endwith %}
