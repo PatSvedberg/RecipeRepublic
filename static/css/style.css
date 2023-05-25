@@ -332,6 +332,10 @@ a.img-container:hover {
     border-bottom-left-radius: 0%;
 }
 
+#delete {
+    background: linear-gradient(135deg, #fc2e2e, #ffffff);
+}
+
 /* ----------------------------------------------------------------------------Search Bar */
 .search-container {
     margin: 20px auto;

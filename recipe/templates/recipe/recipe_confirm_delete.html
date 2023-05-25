@@ -1,17 +1,23 @@
-{% extends "base.html" %} 
+{% extends "base.html" %}
 {% load static %}
 
-{% block title %}Delete recipe {{ object.title }}{% endblock %} 
+{% block title %}Delete recipe {{ object.title }}{% endblock %}
 
 {% block content %}
-<div class="container">
-    <h1 class="text-center mt-2">Confirm Recipe Deletion</h1>
-    <div class="d-flex justify-content-center pt-3">
-        <form method="post" class="text-center">
-            {% csrf_token %} 
-            <p>Are you sure you want to delete "{{object.title}}"?</p>
-            <input type="submit" value="Confirm" class="btn btn-primary w-25">
+<section class="create-recipe-section">
+    <div class="container">
+        <form method="post" class="p-4 form">
+            <h1 class="text-center">Confirm Recipe Deletion</h1>
+            {% csrf_token %}
+            
+            <div class="form-group text-center">
+                <p>Are you sure you want to delete "{{ object.title }}"?</p>
+            </div>
+            
+            <div class="text-center">
+                <button id="delete" type="submit" class="btn btn-primary w-25">Confirm</button>
+            </div>
         </form>
     </div>
-</div>
+</section>
 {% endblock %}
