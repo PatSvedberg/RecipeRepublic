@@ -259,7 +259,11 @@ a.img-container:hover {
 }
 
 .browse-cont a {
-    color: var(--off-white)
+    color: var(--black)
+}
+
+.btn-group a {
+    color:var(--yellowish)
 }
 
 .btn-group {
@@ -409,7 +413,7 @@ a.img-container:hover {
     font-size: 13px;
     letter-spacing: 2px;
     font-weight: 500;
-    color: #868686;
+    color: var(--black)
 }
 
 .card__title {
@@ -427,12 +431,13 @@ a.img-container:hover {
     font-size: 12px;
     font-family: 'Raleway', sans-serif;
     font-weight: 500;
+    color: var(--black)
 }
 
 .card__author {
     font-weight: 600;
     text-decoration: none;
-    color: #AD7D52;
+    color: var(--black)
 }
 
 .card:hover .card__img--hover {
