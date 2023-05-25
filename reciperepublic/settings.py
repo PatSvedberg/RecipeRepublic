@@ -31,11 +31,11 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = 'DEVELOPMENT' in os.environ
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
-ALLOWED_HOSTS = ['recipe-republic.herokuapp.com', 'localhost','8000-patsvedberg-reciperepub-1t3vnxbhwyq.ws-eu97.gitpod.io']
+ALLOWED_HOSTS = ['recipe-republic.herokuapp.com', 'localhost',]
 
 
 # Application definition
