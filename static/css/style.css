@@ -133,6 +133,19 @@ a.nav-link {
     border: black 1px solid;
 }
 
+/*---------------------------------------------------------------------------- Account */
+.logout-container {
+    width: 100%;
+    margin: 3% auto;
+    box-shadow: var(--smal-box-shadow);
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.6);
+    text-align: center;
+    color: var(--yellowish);
+    padding-bottom: 30px;
+}
+
+
 
 
 /*---------------------------------------------------------------------------- Form */
