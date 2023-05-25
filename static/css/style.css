@@ -37,7 +37,7 @@ body {
     display: flex;
     flex-direction: column;
     font-family: var(--main-font);
-    background-image: url(/static/icons/bg-image.jpg);
+    background-image: url("https://res.cloudinary.com/dujhjpyjv/image/upload/v1685025893/bg-image_h2btuj.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
