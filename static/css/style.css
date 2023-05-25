@@ -59,6 +59,12 @@ main {
     background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgba(255, 232, 111, 0.6026785714285714) 100%);
 }
 
+#hero-text {
+    font-family: var(--main-font);
+    font-weight: 500;
+    margin-bottom: 60px;
+}
+
 /*---------------------------------------------------------------------------- Footer */
 footer {
     flex-shrink: 0;

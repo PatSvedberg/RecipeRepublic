@@ -9,12 +9,20 @@
     <section class="text-center">
         <h1 class="main-title mx-auto">Welcome to Recipe Republic!</h1>
 
-        <p class="pt-4">
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-            anim id est laborum."
+        <p id="hero-text" class="pt-4">
+            The ultimate platform for unleashing your culinary creativity!
+
+            At Recipe Republic, we believe that everyone has a chef inside them waiting to be discovered. Whether you're
+            an experienced cook or just starting your culinary journey, our website is here to empower you to create and
+            share your very own mouthwatering recipes.
+
+            With our user-friendly interface and innovative tools, you can effortlessly bring your culinary visions to
+            life. Whether it's a family favorite passed down through generations or a daring fusion of flavors, Recipe
+            Republic provides you with the perfect canvas to craft your masterpiece.
+
+            So, what are you waiting for? Dive into the world of culinary artistry and let your creativity flourish.
+            Create, explore, and savor the joy of cooking like never before. Welcome to Recipe Republic, where every
+            recipe is a work of art!
         </p>
     </section>
 </div>
@@ -34,7 +42,8 @@
                     <p class="card-desc">{{ recipe.description }}</p>
                 </div>
                 <div>
-                    <img src="{{ recipe.image.url }}" alt="Image of {{ recipe.title }}" style="width: 100%" class="card__img">
+                    <img src="{{ recipe.image.url }}" alt="Image of {{ recipe.title }}" style="width: 100%"
+                        class="card__img">
                 </div>
                 <a href="{% url 'recipe_view' recipe.id %}" class="card_link">
                     <div class="card__img--hover">
@@ -69,7 +78,8 @@
                     <p class="card-desc">{{ recipe.description }}</p>
                 </div>
                 <div>
-                    <img src="{{ recipe.image.url }}" alt="Image of {{ recipe.title }}" style="width: 100%" class="card__img">
+                    <img src="{{ recipe.image.url }}" alt="Image of {{ recipe.title }}" style="width: 100%"
+                        class="card__img">
                 </div>
                 <a href="{% url 'recipe_view' recipe.id %}" class="card_link">
                     <div class="card__img--hover">
