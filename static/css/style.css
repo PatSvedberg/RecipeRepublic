@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Roboto:wght@400;500&display=swap');
 
 :root {
-    /* Fonts */
+    /*---------------------------------------------------------------------------- Fonts */
     --title: 'EB Garamond', serif;
     --main-font: 'Roboto', serif;
 
-    /* Colors */
+    /*---------------------------------------------------------------------------- Colors */
     --background: #3f006a0f;
     --blue: #0d6efd;
     --black: #000;
@@ -14,7 +14,7 @@
     --orange: #ffbf50;
     --yellowish: #ffe86f;
 
-    /* Utils */
+    /*---------------------------------------------------------------------------- Utils */
     --smal-box-shadow: 5px -4px 10px 0 #000;
     --navbar-box-shadow: 8px -2px 8px 0 #000;
     --border: 1px solid #00000030;
@@ -59,7 +59,7 @@ main {
     background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgba(255, 232, 111, 0.6026785714285714) 100%);
 }
 
-/* Footer */
+/*---------------------------------------------------------------------------- Footer */
 footer {
     flex-shrink: 0;
     background-color: var(--off-white);
@@ -75,7 +75,7 @@ footer {
     margin: 1rem;
 }
 
-/* Header */
+/*---------------------------------------------------------------------------- Header */
 #navbar-top {
     background: rgb(255, 232, 111);
     background: linear-gradient(280deg, rgba(255, 232, 111, 0.41780462184873945) 0%, rgba(0, 0, 0, 1) 50%, rgba(255, 232, 111, 0.3309698879551821) 100%);
@@ -128,7 +128,7 @@ a.nav-link {
 
 
 
-/* Form */
+/*---------------------------------------------------------------------------- Form */
 
 .form {
     width: 100%;
@@ -147,7 +147,7 @@ form label {
     font-size: 18px;
 }
 
-/* Recipes */
+/*---------------------------------------------------------------------------- Recipes */
 
 .recipe-section {
     margin-top: 15px box-shadow: var(--smal-box-shadow);
@@ -254,21 +254,89 @@ a.img-container:hover {
 
 }
 
+/*----------------------------------------------------------------------------Button style */
+.btn{
+    color: var(--black);
+    background: linear-gradient(135deg, #ffe86f, #ffffff);
+    font-family: var(--main-font), sans-serif;
+    font-size: 22px;
+    font-weight: 300;
+    text-transform: capitalize;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
+}
+.btn-group a {
+    color: var(--black);
+}
+.btn:hover{
+    color: #000000;
+    border: none;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    animation: rotate 0.7s ease-in-out both;
+}
+.btn:before,
+.btn:after{
+    content: '';
+    background: #fff;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    opacity: 0;
+    transform: translate(100%, -25%) translate3d(0, 0, 0);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: all 0.15s cubic-bezier(0.02, 0.01, 0.47, 1);
+}
+.btn:hover:before,
+.btn:hover:after{
+    opacity: 0.15;
+}
+.btn:hover:before{ transform: translate3d(50%, 0, 0) scale(0.9); }
+.btn:hover:after{ transform: translate(50%, 0) scale(1.1); }
+@keyframes rotate{
+    0%{ transform: rotate(0deg); }
+    25%{ transform: rotate(3deg); }
+    50%{ transform: rotate(-3deg); }
+    75%{ transform: rotate(1deg); }
+    100%{ transform: rotate(0deg); }
+}
+
+
 .browse-cont a {
     color: var(--black)
 }
 
 .btn-group a {
-    color: var(--yellowish)
+    color: var(--black)
 }
 
-.btn-group {
-    border-bottom: 2px solid var(--yellowish);
+#pag-pre {
+    border-top-right-radius: 0%;
+    border-bottom-right-radius: 0%;
 }
 
-/* Search Bar */
+#pag-nr{
+    border-radius: 0%;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+#pag-nxt {
+    border-top-left-radius: 0%;
+    border-bottom-left-radius: 0%;
+}
+
+/* ----------------------------------------------------------------------------Search Bar */
 .search-container {
-    margin: 20px 0;
+    margin: 20px auto;
+    width: fit-content;
+    text-align: center;
 }
 
 .search-container .form-control {
@@ -279,7 +347,7 @@ a.img-container:hover {
     margin-left: 10px;
 }
 
-/* Pagination */
+/*---------------------------------------------------------------------------- Pagination */
 
 .pagination {
     --bs-pagination-active-border-color: var(--black)
@@ -294,7 +362,7 @@ a.img-container:hover {
     background-color: var(--yellowish);
 }
 
-/*Recipe form */
+/*----------------------------------------------------------------------------Recipe form */
 
 .div_id_category div {
     display: flex;
@@ -308,7 +376,7 @@ a.img-container:hover {
 }
 
 
-/*Cards*/
+/*----------------------------------------------------------------------------Cards*/
 
 .upload-container {
     background-color: rgba(0, 0, 0, 0.6);
@@ -357,7 +425,6 @@ a.img-container:hover {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    /* Adjusted alignment to flex-start */
     position: absolute;
     top: 0;
     left: 0;
@@ -404,7 +471,7 @@ a.img-container:hover {
 }
 
 .card__category {
-    font-family: 'Raleway', sans-serif;
+    font-family: var(--main-font);
     text-transform: uppercase;
     font-size: 13px;
     letter-spacing: 2px;
@@ -420,12 +487,12 @@ a.img-container:hover {
 .card__title {
     margin-top: 5px;
     margin-bottom: 10px;
-    font-family: 'Roboto Slab', serif;
+    font-family: var(--title);
 }
 
 .card__by {
     font-size: 12px;
-    font-family: 'Raleway', sans-serif;
+    font-family: var(--main-font);
     font-weight: 500;
     color: var(--black)
 }
@@ -465,7 +532,7 @@ a.img-container:hover {
     text-align: center;
 }
 
-/* Profiles */
+/* ----------------------------------------------------------------------------Profiles */
 
 .profile-img {
     width: 280px;
@@ -490,6 +557,10 @@ a.img-container:hover {
 
 .profile-recipes {
     width: 100%;
+}
+
+@media only screen and (max-width: 767px){
+    .btn{ margin-bottom: 20px; }
 }
 
 @media (min-width: 550px) {
@@ -562,72 +633,4 @@ a.img-container:hover {
     .profile-recipes a {
         text-decoration: none;
     }
-}
-
-
-/* Search bar */
-.flexbox {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.search {
-    margin: 20px;
-}
-
-.search>h3 {
-    font-weight: normal;
-}
-
-.search>h1,
-.search>h3 {
-    color: white;
-    margin-bottom: 15px;
-}
-
-.search>div {
-    display: inline-block;
-    position: relative;
-}
-
-.search>div:after {
-    content: "";
-    background: white;
-    width: 4px;
-    height: 20px;
-    position: absolute;
-    top: 40px;
-    right: 2px;
-    transform: rotate(135deg);
-}
-
-.search>div>input {
-    color: white;
-    font-size: 16px;
-    background: transparent;
-    width: 25px;
-    height: 25px;
-    padding: 10px;
-    border: solid 3px white;
-    outline: none;
-    border-radius: 35px;
-    transition: width 0.5s;
-}
-
-.search>div>input::placeholder {
-    color: #efefef;
-    opacity: 0;
-    transition: opacity 150ms ease-out;
-}
-
-.search>div>input:focus::placeholder {
-    opacity: 1;
-}
-
-.search>div>input:focus,
-.search>div>input:not(:placeholder-shown) {
-    width: 250px;
 }

@@ -24,16 +24,6 @@
             <input class="form-control me-2" name="q" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-primary" type="submit">Search</button>
         </form>
-        
-        <div class="flexbox">
-            <form class="search d-flex" role="search" method="GET" action="{% url 'recipe_list' %}">
-              <h6>Find specific recipe </h6>
-              <div>
-                <input name="q" type="search" placeholder="Search . . ." aria-label="Search" required>
-                <button class="btn btn-outline-primary" type="submit">Search</button>
-              </div>
-            </form>
-          </div>
     </div>
     <div class="browse-container">
         <div class="card-title-container">
@@ -68,20 +58,20 @@
         </div>
     </div>
 
-    <nav aria-label="Page navigation example">
-        <ul class="pagination justify-content-center">
+    <nav aria-label="btn-group">
+        <ul class="btn-group pagination justify-content-center">
             <li class="page-item {% if not page_obj.has_previous %}disabled{% endif %}">
-                <a class="page-link" href="{% if page_obj.has_previous %}?page=1{% endif %}" tabindex="-1"
+                <a class="btn" id="pag-pre" href="{% if page_obj.has_previous %}?page=1{% endif %}" tabindex="-1"
                     aria-disabled="{% if not page_obj.has_previous %}true{% endif %}">Previous</a>
             </li>
             {% for page_num in page_obj.paginator.page_range %}
             <li class="page-item {% if page_obj.number == page_num %}active{% endif %}">
-                <a class="page-link" href="?page={{ page_num }}">{{ page_num }}</a>
+                <a class="btn" id="pag-nr" href="?page={{ page_num }}">{{ page_num }}</a>
             </li>
             {% endfor %}
             <li class="page-item {% if not page_obj.has_next %}disabled{% endif %}">
-                <a class="page-link"
-                    href="{% if page_obj.has_next %}?page={{ page_obj.next_page_number }}{% endif %}">Next</a>
+                <a class="btn"
+                id="pag-nxt" href="{% if page_obj.has_next %}?page={{ page_obj.next_page_number }}{% endif %}">Next</a>
             </li>
         </ul>
     </nav>
