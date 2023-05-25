@@ -4,7 +4,11 @@
 <br>
 
 # Introduction
-Recipe Republic is a site for those who loves to make recipes or just interested in finding something new to cook.
+## About Recipe Republic
+Recipe Republic is a comprehensive recipe making site designed to simplify your cooking journey. We understand that the joy of cooking lies in the perfect balance of creativity, taste, and convenience.
+
+## Target Audience
+Recipe Republic caters to anyone with a love for food and a desire to discover new recipes. Whether you're a busy professional seeking quick and easy meals, a home cook looking for family-friendly recipes, or an adventurous foodie eager to explore different cuisines, we have something for everyone. Our user-friendly interface and intuitive search system make it effortless to find recipes tailored to your preferences.
 
 # User Stories
 ## Account:
