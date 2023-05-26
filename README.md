@@ -75,7 +75,7 @@ Recipe Republic caters to anyone with a love for food and a desire to discover n
 
 # Database Relationships
 
-![ERD Image](/assets/images/readme-erd.png)
+![ERD Image](/assets/images/readme_erd.png)
 
 
 # Design
@@ -99,13 +99,13 @@ Here you're able to see your user profile. You can access your own profile from 
 ![View recipe page Image](/assets/images/readme_profile_image.PNG)
 # Wireframe
 ## Front page:
-![Flowchart Image](/assets/images/wireframe_home.png)
+![Flowchart Image](/assets/images/readme_wireframe_home.png)
 ## Create Recipe Page:
-![Flowchart Image](/assets/images/wireframe_create.png)
+![Flowchart Image](/assets/images/readme_wireframe_create.png)
 ## Browse Recipe Page:
-![Flowchart Image](/assets/images/wireframe_browse.png)
+![Flowchart Image](/assets/images/readme_wireframe_browse.png)
 ## Profile Page:
-![Flowchart Image](/assets/images/wireframe_profile.png)
+![Flowchart Image](/assets/images/readme_wireframe_profile.png)
 <br>
 
 ## Features
