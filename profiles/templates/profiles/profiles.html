@@ -11,7 +11,7 @@
                 {% if profile.image.url is not none %}
                 <img src="{{ profile.image.url }}" alt="{{ profile.user.username }}'s profile image">
                 {% else %}
-                <img src="{% static '/icons/profile-icon.svg' %}" alt="Image not found icon">
+                <img src="https://res.cloudinary.com/dujhjpyjv/raw/upload/v1685027542/static/icons/profile-icon.c53369d50245.svg" alt="Image not found icon">
                 {% endif %}
             </div>
             <h1>{{ profile.user.username }}</h1>
