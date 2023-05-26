@@ -136,27 +136,6 @@ An approximation of the agile workflow was implemented in the development of thi
 
 * **Add Additional Features When Possible:** After completing the most important features, I focused on adding more functions and a better user experience.
 
-# Technologies Used
-## Languages Used
-* [HTML]()
-* [CSS]()
-* [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
-
-## Softwares used
-* [Github](https://github.com/PatSvedberg/cal-calc)
-* [Heroku](https://calcalc.herokuapp.com/)
-* [CI Python Linter](https://pep8ci.herokuapp.com/#)
-* [Lucidchart](https://www.lucidchart.com/pages)
-* [Figma]()
-* [Gitpod](https://gitpod.io/)
-
-## Frameworks and packages
-* [Django]()
-* [Bootstrap 5]()
-* [Cloudinary]()
-* [Crispy Forms]()
-* [Django-richtextfield]()
-
 # Content
 ## Helpful souces
 * [W3schools](https://www.w3schools.com/python/)
@@ -177,7 +156,30 @@ An approximation of the agile workflow was implemented in the development of thi
 
 # Deployment:
 
-## Deployment
+# Technologies Used
+## Languages Used
+* [HTML]()
+* [CSS]()
+* [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
+
+## Softwares used
+* [Github](https://github.com/PatSvedberg/cal-calc)
+* [Heroku](https://calcalc.herokuapp.com/)
+* [CI Python Linter](https://pep8ci.herokuapp.com/#)
+* [Lucidchart](https://www.lucidchart.com/pages)
+* [Gitpod](https://gitpod.io/)
+
+## Frameworks, packages and other
+* [Django]() - A high-level Python web framework that simplifies and accelerates the development.
+* [Bootstrap 5]() - A library consisting of CSS and JavaScript components used to create responsive websites.
+* [Cloudinary]() - A cloud storage service for media files, commonly used to serve static files.
+* [Crispy Forms]() - A package that simplifies the process of styling Django forms automatically.
+* [Django-richtextfield]() - Package that provides a rich text field for storing and rendering formatted text content within your Django application.
+* [ElephantSQL]() - An online service that offers PostgreSQL server hosting as a service.
+* [dj3-cloudinary-storage]() - Provides the functionality to utilize Cloudinary storage for serving static files and media in Django.
+* [dj-database-url]() - Enables the usage of Database URLs within your Django application..
+
+## GitHub
 
 The project was deployed to GitHub Pages using the following steps...
 1. Log in to GitHub and locate the GitHub Repository.
@@ -224,5 +226,96 @@ Here are the steps to clone a GitHub repository:
 3. Next, add the changes you have made to the file to the Git staging area using the command: `git add <"filename">`, or `git add .` to commit all files. This will prepare the changes for committing.
 4. Commit the changes to the repository using the command: `git commit -m "Commit message"`.
 5. Push the changes to the remote repository using the command: `git push`. This will update the file on the remote repository, making your changes available to others.
-<br>
-<br>
+
+
+## Heroku Deployment
+
+* Created a app called 'recipe-republic'.
+
+* Add Procfile to project root directory
+
+* Added these config vars:
+    * CLOUDINARY_URL
+    * DATABASE_URL
+    * DISABLE_COLLECTSTATIC
+    * HEROKU_POSTGRESQL_GRAY_URL
+    * SECRET_KEY
+
+* Before final deployment, the debug setting in settings.py was set from **TRUE** to **FALSE** for security.
+    * Due to some Heroku problems I had to do it like this:
+        * **DEBUG = 'DEVELOPMENT' in os.environ**
+            * And added this inside my env.py:<br>**os.environ["DEVELOPMENT"] = "1"**<br>(And commit it out before deployment.)
+
+* Before the final deployment, the DISABLE_COLLECTSTATIC config var in Heroku was changed from 1 to 0
+* Connect to Github repository
+    * Deploy from branch
+    * Select GitHub branch
+    * Click deploy button 
+
+## ElephantSQL Account Setup
+* Create account with Github
+* Click Create New Instance
+* Choose TinyTurtle Plan
+* Enter project name
+* Pick region
+* From dashboard. Click the project
+* Copy URL and paste to **env.py**
+* Inside **settings.py** add this:
+
+```
+import os
+import dj_database_url
+if os.path.isfile('env.py'):
+  import env
+```
+In **settings.py** add enviroment variables:
+```
+DATABASES = {
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+ }
+```
+Migrate changes:
+```
+$ python manage.py makemigrations
+$ python manage.py migrate
+```
+
+## Cloudinary Setup
+* Create Cloudinary account
+* From the dashboard, copy the URL
+* Paste it inside the **env.py**:
+```
+    import os
+
+os.environ["DATABASE_URL"] = the databse URL from ElephantSQL
+os.environ["SECRET_KEY"]= a string used to generate security keys
+os.environ["CLOUDINARY_URL"] = The url for Cloudinary storage
+```
+* Then copy the URL to the Heroku Config Vars
+* Also add a temporary called DISABLE_COLLECTSTATIC and set it to "0"
+* Add Cloudinary to installed app inside **settings.py**
+```
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'cloudinary_storage',
+    'django.contrib.staticfiles',
+
+    # My Apps
+    'cloudinary',
+```
+* Then tell Django to use Cloudinary for our static files by adding this in **settings.py**
+```
+STATIC_URL = '/static/'
+
+# Cloudinary Settings
+STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+MEDIA_URL = '/media/'
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+```
