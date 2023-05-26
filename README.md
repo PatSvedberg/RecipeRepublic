@@ -161,6 +161,7 @@ Created with [coolors.co](https://coolors.co/)
 
 ## Validators:
 ### Python Linter
+![Image of CSS Validator](/assets/images/readme_python_valid.PNG)
 ### HTML Validator
 ![Image of CSS Validator](/assets/images/readme_html_valid.PNG)
 ### CSS Validator
@@ -226,6 +227,7 @@ An approximation of the agile workflow was implemented in the development of thi
 * [Heroku](https://heroku.com/)
 * [HTML Validator](https://validator.w3.org/)
 * [CSS Validator](https://jigsaw.w3.org/css-validator/)
+* [Python Validator](https://extendsclass.com/python-tester.html)
 * [Lucidchart](https://www.lucidchart.com/pages)
 * [Gitpod](https://gitpod.io/)
 
