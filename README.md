@@ -147,6 +147,16 @@ An approximation of the agile workflow was implemented in the development of thi
 
 * **Add Additional Features When Possible:** After completing the most important features, I focused on adding more functions and a better user experience.
 
+[Link to Kanban board](https://github.com/users/PatSvedberg/projects/3)
+
+## Kanban Board
+![Image of closed issues](/assets/images/readme_board.PNG)
+## Issues
+### Open issues
+![Image of closed issues](/assets/images/readme_closed_issues.PNG)
+### Closed issues
+![Image of open issues](/assets/images/readme_closed_issues.PNG)
+
 # Content
 ## Helpful souces
 * [W3schools](https://www.w3schools.com/python/)
