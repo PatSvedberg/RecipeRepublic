@@ -640,6 +640,8 @@ hr {
 @media only screen and (max-width: 767px) {
     .btn {
         margin-bottom: 20px;
+        font-size: 16px;
+        padding-right: 83px;
     }
 }
 
@@ -647,6 +649,26 @@ hr {
     #navbarNav {
         display: flex !important;
         flex-basis: auto !important;
+    }
+}
+
+@media (max-width: 550px) {
+    .btn-group, .btn-group-vertical {
+        position: relative;
+        display: inline-flex;
+        vertical-align: middle;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 400px) {
+
+    ol, ul {
+        padding-left: 0rem;
+        font-size: 14px;
+    }
+    .p-3 {
+        padding: 0rem!important;
     }
 }
 
