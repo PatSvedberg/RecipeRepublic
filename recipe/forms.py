@@ -22,7 +22,9 @@ class RecipeForm(forms.ModelForm):
     instructions = forms.CharField(widget=RichTextWidget())
 
     title = forms.CharField(label="Title")
-    description = forms.CharField(widget=forms.Textarea(attrs={"rows": 5}), label="Description")
+    description = forms.CharField(
+        widget=forms.Textarea(attrs={"rows": 5}), label="Description"
+    )
     image = forms.ImageField(label="Image")
 
     class Meta:

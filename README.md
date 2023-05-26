@@ -162,6 +162,7 @@ Created with [coolors.co](https://coolors.co/)
 ## Validators:
 ### Python Linter
 ### HTML Validator
+![Image of CSS Validator](/assets/images/readme_html_valid.PNG)
 ### CSS Validator
 ![Image of CSS Validator](/assets/images/readme_css_valid.PNG)
 ### Lighthouse
