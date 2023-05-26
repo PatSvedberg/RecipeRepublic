@@ -80,14 +80,18 @@ Recipe Republic caters to anyone with a love for food and a desire to discover n
 ## Pages
 ### **Index**
 The front page will display a greeting text to the user, along with the four most recent food and four most recent drink recipes that have been uploaded.
+![Index page Image](/assets/images/readme_index_image.PNG)
 ### **Create Recipe**
 The create recipe form is located on this page, accessible only to logged-in users. If you are not logged in and try to access this page, you will be redirected to the login page.
+![Create recipe page Image](/assets/images/readme_create_image.PNG)
 ### **Browse Recipe**
-
 Here, the user can browse all the recipes by utilizing the search bar or filtering the list to display all recipes, food recipes, drink recipes, or vegan recipes.
+![Browse recipe page Image](/assets/images/readme_browse_image.PNG)
 ### **View Recipe**
 Here, the user will be able to read all the created recipes and view all the information provided by the creators.
-<br>
+![View recipe page Image](/assets/images/readme_view_recipe.PNG)
+### **View Profile**
+Here you're able to see the users of the site. You can access your own profile from the header or creators of the different recipes by clicking their name in the recipe cards.
 # Wireframe
 ## Front page:
 ![Flowchart Image](/assets/images/wireframe_home.png)
