@@ -66,7 +66,7 @@
 <div class="upload-container">
     <div class="card-title-container">
         <h3>Latest Drink Recipes</h3>
-        <section class="cards">
+        <div class="cards">
             {% for recipe in recipes %}
             {% if recipe.category == 'drink' %}
             <article class="card card--1">
@@ -95,7 +95,7 @@
             </article>
             {% endif %}
             {% endfor %}
-        </section>
+        </div>
     </div>
 </div>
 
