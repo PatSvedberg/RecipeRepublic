@@ -3,6 +3,8 @@
 ## [Heroku Deployment](https://recipe-republic.herokuapp.com/)
 <br>
 
+![Procject in screens](/assets/images/readme_screens.PNG)
+
 # Introduction
 ## About Recipe Republic
 Recipe Republic is a comprehensive recipe making site designed to simplify your cooking journey. We understand that the joy of cooking lies in the perfect balance of creativity, taste, and convenience.
@@ -83,6 +85,8 @@ The front page will display a greeting text to the user, along with the four mos
 ![Index page Image](/assets/images/readme_index_image.PNG)
 ### **Create Recipe**
 The create recipe form is located on this page, accessible only to logged-in users. If you are not logged in and try to access this page, you will be redirected to the login page.
+
+**Note**! Since the profile page is still not 100% working as it should. The Private/Public option is not doing anything.
 ![Create recipe page Image](/assets/images/readme_create_image.PNG)
 ### **Browse Recipe**
 Here, the user can browse all the recipes by utilizing the search bar or filtering the list to display all recipes, food recipes, drink recipes, or vegan recipes.
@@ -91,7 +95,7 @@ Here, the user can browse all the recipes by utilizing the search bar or filteri
 Here, the user will be able to read all the created recipes and view all the information provided by the creators.
 ![View recipe page Image](/assets/images/readme_view_recipe.PNG)
 ### **View Profile**
-Here you're able to see the users of the site. You can access your own profile from the header or creators of the different recipes by clicking their name in the recipe cards.
+Here you're able to see your user profile. You can access your own profile from the header.
 ![View recipe page Image](/assets/images/readme_profile_image.PNG)
 # Wireframe
 ## Front page:
@@ -103,7 +107,31 @@ Here you're able to see the users of the site. You can access your own profile f
 ## Profile Page:
 ![Flowchart Image](/assets/images/wireframe_profile.png)
 <br>
+
 ## Features
+
+### **User Profile Creation**
+Start by creating your own user profile. Choose a username, provide an email address, and set a password.
+
+### **Recipe Creation**
+Create a recipe according to your preferences. Begin by selecting a title, listing the ingredients, describing the steps involved in preparing the meal/drink, specifying whether it is a food or drink, indicating if it's vegan or not, and choosing whether to publish it publicly or keep it private*.
+<br>
+**Note: The publish option currently has no effect.**
+
+### **View own and others recipe**
+You can view your own recipes, as well as recipes of other users, whether you are logged in or not.
+
+### **Edit and Delete Recipes**
+If you own a recipe, you have the ability to edit or delete it at any time.
+
+### **View own profile**
+See your profile and the list of your created recipes
+
+## Fonts
+**[Roboto](https://fonts.google.com/specimen/Roboto)**
+
+**[EB Garamond](https://fonts.google.com/specimen/EB+Garamond)**
+
 ## Colors
 ![Palette Image](/assets/images/readme_palette.png)
 Created with [coolors.co](https://coolors.co/)
@@ -139,6 +167,7 @@ Created with [coolors.co](https://coolors.co/)
 ### Lighthouse
 ![Image of Lighthouse test](/assets/images/readme_lighthouse.PNG)
 ### Known bugs
+* For some reason I can't view user profiles in the Heroku app eventhough it works in the workspace. The Admin profile seems to work fine.
 
 # Agile Workflow
 An approximation of the agile workflow was implemented in the development of this project. The key ideas adopted were:
@@ -170,7 +199,12 @@ An approximation of the agile workflow was implemented in the development of thi
 # Credit
 
 ## Media
+* [Dee Mc's Youtube](https://www.youtube.com/@IonaFrisbee/videos) for tips and tricks
+* **Code Institute's I Think Therefore I Blog** was great to getting started
 * [Hero Image](https://www.pexels.com/)
+* Recipe examples from:
+    * [ICA](https://www.ica.se/recept/)
+    * [Köket.se](https://www.koket.se/)
 
 
 ## Coding
@@ -205,12 +239,10 @@ An approximation of the agile workflow was implemented in the development of thi
 ## GitHub
 
 The project was deployed to GitHub Pages using the following steps...
-1. Log in to GitHub and locate the GitHub Repository.
-2. Find the "Settings" button on the menu at the top of the repository
-3. Scroll down the Settings page until you reach the "Pages" section.
-4. In the "Source" section, click the dropdown labeled "None" and choose "Main Branch".
-5. The page will refresh automatically.
-6. Wait for the deployment process to complete.
+1. From this [GitHub template](https://github.com/Code-Institute-Org/gitpod-full-template)
+2. Find the "Use this template" and click "Create a new repository"
+3. Give it a name and a pick private or public. Click "Create repository from template"
+4. When created click the Github button.
 <br>
 <br>
 
@@ -250,30 +282,58 @@ Here are the steps to clone a GitHub repository:
 4. Commit the changes to the repository using the command: `git commit -m "Commit message"`.
 5. Push the changes to the remote repository using the command: `git push`. This will update the file on the remote repository, making your changes available to others.
 
+## Django Creation
 
-## Heroku Deployment
+* Install libraries and Django according to the walkthrough on Code Institute.
+```
+$ pip3 install 'django<4' gunicorn
+$ pip3 install dj_database_url psycopg2
+$ pip3 install dj3-cloudinary-storage
+$ pip3 install django-crispy-forms  
+$ pip3 install crispy-bootstrap5
+```
+* Created requirements.txt
+```
+$ pip3 freeze --local > requirements.txt
+```
+* Create Django project
+```
+$ django-admin startproject reciperepublic .
+```
+* Created my recipe app and then added it in **settings.py**
 
-* Created a app called 'recipe-republic'.
+```
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'cloudinary_storage',  # Cloudinary Storage
+    'django.contrib.staticfiles',
 
-* Add Procfile to project root directory
+    # All Auth
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
 
-* Added these config vars:
-    * CLOUDINARY_URL
-    * DATABASE_URL
-    * DISABLE_COLLECTSTATIC
-    * HEROKU_POSTGRESQL_GRAY_URL
-    * SECRET_KEY
+    # My Apps
+    'cloudinary',
+    'recipe',
+    'profiles',
 
-* Before final deployment, the debug setting in settings.py was set from **TRUE** to **FALSE** for security.
-    * Due to some Heroku problems I had to do it like this:
-        * **DEBUG = 'DEVELOPMENT' in os.environ**
-            * And added this inside my env.py:<br>**os.environ["DEVELOPMENT"] = "1"**<br>(And commit it out before deployment.)
+    # Other
+    'crispy_forms',
+    'crispy_bootstrap5',
+    'djrichtextfield'
+]
+```
 
-* Before the final deployment, the DISABLE_COLLECTSTATIC config var in Heroku was changed from 1 to 0
-* Connect to Github repository
-    * Deploy from branch
-    * Select GitHub branch
-    * Click deploy button 
+* Add Cripy forms to **settings.py**
+```
+CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
+```
 
 ## ElephantSQL Account Setup
 * Create account with Github
@@ -317,6 +377,7 @@ os.environ["CLOUDINARY_URL"] = The url for Cloudinary storage
 * Then copy the URL to the Heroku Config Vars
 * Also add a temporary called DISABLE_COLLECTSTATIC and set it to "0"
 * Add Cloudinary to installed app inside **settings.py**
+
 ```
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -329,6 +390,7 @@ INSTALLED_APPS = [
 
     # My Apps
     'cloudinary',
+
 ```
 * Then tell Django to use Cloudinary for our static files by adding this in **settings.py**
 ```
@@ -342,3 +404,29 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_URL = '/media/'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 ```
+
+
+
+## Heroku Deployment
+
+* Created a app called 'recipe-republic'.
+
+* Add Procfile to project root directory
+
+* Added these config vars:
+    * CLOUDINARY_URL
+    * DATABASE_URL
+    * DISABLE_COLLECTSTATIC
+    * HEROKU_POSTGRESQL_GRAY_URL
+    * SECRET_KEY
+
+* Before final deployment, the debug setting in settings.py was set from **TRUE** to **FALSE** for security.
+    * Due to some Heroku problems I had to do it like this:
+        * **DEBUG = 'DEVELOPMENT' in os.environ**
+            * And added this inside my env.py:<br>**os.environ["DEVELOPMENT"] = "1"**<br>(And commit it out before deployment.)
+
+* Before the final deployment, the DISABLE_COLLECTSTATIC config var in Heroku was changed from 1 to 0
+* Connect to Github repository
+    * Deploy from branch
+    * Select GitHub branch
+    * Click deploy button 
