@@ -92,6 +92,7 @@ Here, the user will be able to read all the created recipes and view all the inf
 ![View recipe page Image](/assets/images/readme_view_recipe.PNG)
 ### **View Profile**
 Here you're able to see the users of the site. You can access your own profile from the header or creators of the different recipes by clicking their name in the recipe cards.
+![View recipe page Image](/assets/images/readme_profile_image.PNG)
 # Wireframe
 ## Front page:
 ![Flowchart Image](/assets/images/wireframe_home.png)
@@ -102,7 +103,6 @@ Here you're able to see the users of the site. You can access your own profile f
 ## Profile Page:
 ![Flowchart Image](/assets/images/wireframe_profile.png)
 <br>
-## Flowchart
 ## Features
 ## Colors
 ![Palette Image](/assets/images/readme_palette.png)
@@ -135,7 +135,9 @@ Created with [coolors.co](https://coolors.co/)
 ### Python Linter
 ### HTML Validator
 ### CSS Validator
+![Image of CSS Validator](/assets/images/readme_css_valid.PNG)
 ### Lighthouse
+![Image of Lighthouse test](/assets/images/readme_lighthouse.PNG)
 ### Known bugs
 
 # Agile Workflow
