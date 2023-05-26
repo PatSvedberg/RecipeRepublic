@@ -6,7 +6,7 @@
 {% block content %}
 
 <div class="container flex-column pt-3">
-    <section class="text-center">
+    <div class="text-center">
         <h1 class="main-title mx-auto">Welcome to Recipe Republic!</h1>
 
         <p id="hero-text" class="pt-4">
@@ -24,13 +24,13 @@
             Create, explore, and savor the joy of cooking like never before. Welcome to Recipe Republic, where every
             recipe is a work of art!
         </p>
-    </section>
+    </div>
 </div>
 
 <div class="upload-container">
     <div class="card-title-container">
         <h3>Latest Food Recipes</h3>
-        <section class="cards">
+        <div class="cards">
             {% for recipe in recipes %}
             {% if recipe.category == 'food' %}
             <article class="card card--1">
@@ -59,7 +59,7 @@
             </article>
             {% endif %}
             {% endfor %}
-        </section>
+        </div>
     </div>
 </div>
 

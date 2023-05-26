@@ -3,7 +3,7 @@
 {% block title %}Recipes{% endblock %}
 
 {% block content %}
-<section class="container browse-cont">
+<div class="container browse-cont">
     <h1 class="text-center p-2 d-block">
         Browse Recipes:
     </h1>
@@ -70,10 +70,11 @@
             </li>
             {% endfor %}
             <li class="page-item {% if not page_obj.has_next %}disabled{% endif %}">
-                <a class="btn"
-                id="pag-nxt" href="{% if page_obj.has_next %}?page={{ page_obj.next_page_number }}{% endif %}">Next</a>
+                <a class="btn" id="pag-nxt"
+                    href="{% if page_obj.has_next %}?page={{ page_obj.next_page_number }}{% endif %}">Next</a>
             </li>
         </ul>
     </nav>
+</div>
 
-    {% endblock %}
+{% endblock %}
