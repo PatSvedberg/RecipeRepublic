@@ -7,7 +7,8 @@ class RecipeForm(forms.ModelForm):
     """Form to create a new recipe"""
 
     category = forms.ChoiceField(
-        choices=Recipe.CATEGORY_CHOICES, widget=forms.RadioSelect, label="Category"
+        choices=Recipe.CATEGORY_CHOICES,
+        widget=forms.RadioSelect, label="Category"
     )
 
     vegan = forms.ChoiceField(
@@ -15,7 +16,8 @@ class RecipeForm(forms.ModelForm):
     )
 
     publicity = forms.ChoiceField(
-        choices=Recipe.PUBLICITY_CHOICES, widget=forms.RadioSelect, label="Publicity"
+        choices=Recipe.PUBLICITY_CHOICES,
+        widget=forms.RadioSelect, label="Publicity"
     )
 
     ingredients = forms.CharField(widget=RichTextWidget())

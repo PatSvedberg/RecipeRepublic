@@ -29,8 +29,18 @@ class Recipe(models.Model):
         blank=False,
         null=False,
     )
-    category = models.CharField(max_length=50, choices=CATEGORY_CHOICES, default="food")
-    vegan = models.CharField(max_length=50, choices=VEGAN_CHOICES, default="no")
+    category = models.CharField(
+        max_length=50,
+        choices=CATEGORY_CHOICES,
+        default="food"
+    )
+
+    vegan = models.CharField(
+        max_length=50,
+        choices=VEGAN_CHOICES,
+        default="no"
+    )
+
     publicity = models.CharField(
         max_length=50, choices=PUBLICITY_CHOICES, default="private"
     )

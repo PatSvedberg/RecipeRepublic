@@ -30,8 +30,10 @@ class Index(ListView):
 
     def get_queryset(self):
         queryset = super().get_queryset()
-        food_recipes = queryset.filter(category="food").order_by("-post_date")[:4]
-        drink_recipes = queryset.filter(category="drink").order_by("-post_date")[:4]
+        food_recipes = queryset.filter(category="food").order_by(
+            "-post_date")[:4]
+        drink_recipes = queryset.filter(category="drink").order_by(
+            "-post_date")[:4]
         return food_recipes.union(drink_recipes).order_by("-post_date")
 
 

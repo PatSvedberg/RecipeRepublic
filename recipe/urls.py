@@ -1,5 +1,13 @@
 from django.urls import path
-from .views import Index, NewRecipe, RecipeList, RecipeDetail, DeleteRecipe, EditRecipe
+from .views import (
+    Index,
+    NewRecipe,
+    RecipeList,
+    RecipeDetail,
+    DeleteRecipe,
+    EditRecipe
+)
+
 
 urlpatterns = [
     path("", Index.as_view(), name="home"),
