@@ -216,26 +216,31 @@ An approximation of the agile workflow was implemented in the development of thi
 
 # Technologies Used
 ## Languages Used
-* [HTML]()
-* [CSS]()
+* [HTML](https://sv.wikipedia.org/wiki/HTML)
+* [CSS](https://sv.wikipedia.org/wiki/Cascading_Style_Sheets)
+* [Javascript](https://sv.wikipedia.org/wiki/Javascript) 
 * [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
 
 ## Softwares used
-* [Github](https://github.com/PatSvedberg/cal-calc)
-* [Heroku](https://calcalc.herokuapp.com/)
-* [CI Python Linter](https://pep8ci.herokuapp.com/#)
+* [Github](https://github.com/)
+* [Heroku](https://heroku.com/)
+* [HTML Validator](https://validator.w3.org/)
+* [CSS Validator](https://jigsaw.w3.org/css-validator/)
 * [Lucidchart](https://www.lucidchart.com/pages)
 * [Gitpod](https://gitpod.io/)
 
 ## Frameworks, packages and other
-* [Django]() - A high-level Python web framework that simplifies and accelerates the development.
-* [Bootstrap 5]() - A library consisting of CSS and JavaScript components used to create responsive websites.
-* [Cloudinary]() - A cloud storage service for media files, commonly used to serve static files.
-* [Crispy Forms]() - A package that simplifies the process of styling Django forms automatically.
-* [Django-richtextfield]() - Package that provides a rich text field for storing and rendering formatted text content within your Django application.
-* [ElephantSQL]() - An online service that offers PostgreSQL server hosting as a service.
-* [dj3-cloudinary-storage]() - Provides the functionality to utilize Cloudinary storage for serving static files and media in Django.
-* [dj-database-url]() - Enables the usage of Database URLs within your Django application..
+* [Django](https://www.djangoproject.com/) - A high-level Python web framework that simplifies and accelerates the development.
+* [Bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/introduction/) - A library consisting of CSS and JavaScript components used to create responsive websites.
+* [Cloudinary](https://cloudinary.com/) - A cloud storage service for media files, commonly used to serve static files.
+* [Crispy Forms](https://pypi.org/project/django-crispy-forms/) - A package that simplifies the process of styling Django forms automatically.
+* [Django-richtextfield](https://pypi.org/project/django-richtextfield/) - Package that provides a rich text field for storing and rendering formatted text content within your Django application.
+* [ElephantSQL](https://www.elephantsql.com/) - An online service that offers PostgreSQL server hosting as a service.
+* [dj3-cloudinary-storage](https://pypi.org/project/dj3-cloudinary-storage/) - Provides the functionality to utilize Cloudinary storage for serving static files and media in Django.
+* [dj-database-url](https://pypi.org/project/dj-database-url/) - Enables the usage of Database URLs within your Django application.
+* [Black](https://pypi.org/project/black/) - Python code formatter
+* 
+
 
 ## GitHub
 
