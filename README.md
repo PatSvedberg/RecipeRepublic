@@ -112,13 +112,20 @@ Created with [coolors.co](https://coolors.co/)
 | Test       | Action           | Expected Result  | Expected Result  |
 | ------------- |:-------------| :-----| :-----|
 | User       | Create User | Be able to create a user   | Works as expected |
-| Admin       | CRUD User | Admin is able to create, read,<br> update and delete user  | Works as expected |
-| Admin       | CRUD Recipe | Admin is able to create, read,<br> update and delete recipe  | Works as expected |
-| User       | Create a recipe | Only a user will be able<br> to create a recipe| Works as expected
-| User   | View Recipe | Be able to view a recipe when <br> logged in and not logged in. | Works as expected
-| User      | CRUD Recipe      | Only the user who created the recipe<br> will have the ability to update or delete it | Works as expected
+| Admin       | Create User | Admin is able to a create user  | Works as expected |
+| Admin       | Read User | Admin is able to view the user information  | Works as expected |
+| Admin       | Update User | Admin is able to update the user information  | Works as expected |
+| Admin       | Delete User | Admin is able to delete a user  | Works as expected |
+| Admin       | Create Recipe | Admin is able to create a recipe  | Works as expected |
+| Admin       | Read Recipe | Admin is able to see the recipe information  | Works as expected |
+| Admin       | Update Recipe | Admin is able to update the recipe information  | Works as expected |
+| Admin       | Delete Recipe | Admin is able to delete a recipe  | Works as expected |
+| User      | Create Recipe      | Only a logged in user can create a recipe | Works as expected
+| User      | Read Recipe      | The user can conveniently access their own created recipes as well as explore others, whether they are logged in or not.| Works as expected
+| User      | Update Recipe      | Only the user who created the recipe will have the ability to update it | Works as expected
+| User      | Delete Recipe      | Only the user who created the recipe will have the ability to delete it | Works as expected
 | User | Search recipe      | Search recipes from the search bar  | Works as expected
-| User | Browse Recipe category  | Browse recipe category<br> (All, Food, Drink, Vegan)  | Works as expected
+| User | Browse Recipe category  | Browse recipe category (All, Food, Drink, Vegan)  | Works as expected
 
 ## Validators:
 ### Python Linter
